@@ -4,11 +4,11 @@
   <meta name="google-site-verification" content="Y7DgTlLGnAwg9FY2TGghV3cpmDDctQdEd1FoDzaZPzU" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ose — Image Sequence</title>
+  <title>O.S.E. — Otroci Sintetične Eve</title>
   <style>
     html,body{ height:100%; margin:0; }
     body{
-      background:#000; /* pure black background */
+      background:#000;
       color:#fff;
       font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       -webkit-font-smoothing:antialiased;
@@ -130,6 +130,34 @@
       color: #ff4444;
     }
 
+    /* Search styles */
+    .search-section {
+      text-align:center;
+      margin:40px 0 20px 0;
+    }
+    .search-section input {
+      padding:10px;
+      width:300px;
+      border-radius:8px;
+      border:1px solid #555;
+      background:#111;
+      color:white;
+      font-size:15px;
+    }
+    .search-section button {
+      padding:10px 20px;
+      border:none;
+      background:#fff;
+      color:#000;
+      font-weight:bold;
+      border-radius:8px;
+      cursor:pointer;
+      margin-left:5px;
+    }
+    .search-section button:hover {
+      background:#ccc;
+    }
+
     @media (max-width:520px){
       .gallery img{ max-width:100%; border-radius:6px; }
       .lightbox img {
@@ -145,13 +173,24 @@
         padding: 10px 20px;
         font-size: 14px;
       }
+      .search-section input {
+        width: 80%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="title">
-      <img src="lol1.png" alt="ose — title" />
+      <img src="lol1.png" alt="O.S.E — title" />
+    </div>
+
+    <!-- Search bar -->
+    <div class="search-section">
+      <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search O.S.E..." />
+        <button type="submit">Search</button>
+      </form>
     </div>
 
     <div class="gallery">
@@ -174,7 +213,6 @@
       <img id="lightbox-img" src="" alt="" />
     </div>
 
-    <!-- Added text below -->
     <p class="extra-text">Črna erotika okuži srne</p>
     
     <!-- PDF Download Link -->
@@ -195,8 +233,6 @@
       lightbox.style.display = 'block';
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
-      
-      // Prevent the click from closing the lightbox immediately
       event.stopPropagation();
     }
 
@@ -204,20 +240,32 @@
       document.getElementById('lightbox').style.display = 'none';
     }
 
-    // Close lightbox when clicking outside the image
     document.getElementById('lightbox').addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeLightbox();
-      }
+      if (event.target === this) closeLightbox();
     });
 
-    // Close lightbox with Escape key
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeLightbox();
+      if (event.key === 'Escape') closeLightbox();
+    });
+
+    // Search form functionality
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      // Replace "ose image sequence" automatically
+      if (query === 'ose image sequence') {
+        query = 'O.S.E Otroci Sintetične Eve';
       }
+
+      // Default if empty
+      if (!query) {
+        query = 'O.S.E Otroci Sintetične Eve';
+      }
+
+      // Redirect to Google search (no need to type 'github')
+      window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
     });
   </script>
 </body>
 </html>
-
