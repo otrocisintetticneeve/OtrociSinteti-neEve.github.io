@@ -1,36 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="sl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O.S.E.-Otroci Sinteticne Eve</title>
+
+  <!-- 🔹 SEO naslov in opis -->
+  <title>O.S.E. — Otroci Sintetične Eve | Galerija vizualnih serij</title>
+  <meta name="description" content="O.S.E. (Otroci Sintetične Eve) je galerija slikovnih sekvenc, ki raziskuje umetnost, estetiko in digitalno erotiko skozi serije vizualnih podob." />
+  <meta name="keywords" content="OSE, Otroci Sintetične Eve, umetnost, vizualna galerija, slike, digitalna umetnost, manifest" />
+
+  <!-- 🔹 Open Graph za družbena omrežja in Google -->
+  <meta property="og:title" content="O.S.E. — Otroci Sintetične Eve" />
+  <meta property="og:description" content="Galerija O.S.E. prikazuje umetniške slikovne sekvence, ki združujejo estetiko, telo in tehnologijo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://otrocsinteticneeve.github.io/" />
+  <meta property="og:image" content="https://otrocsinteticneeve.github.io/lol1.png" />
+
+  <!-- 🔹 Barva zavihka in ikona -->
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="lol1.png" type="image/png">
+
   <style>
     html,body{ height:100%; margin:0; }
     body{
-      background:#000; /* pure black background */
+      background:#000;
       color:#fff;
-      font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family:system-ui, -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
       -webkit-font-smoothing:antialiased;
       display:flex;
       align-items:flex-start;
       justify-content:center;
       padding:0;
     }
-    .wrap{
-      width:100%;
-      max-width:1100px;
-    }
-
-    .title{
-      width:100%;
-      margin:0 auto 20px auto;
-    }
-    .title img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
+    .wrap{ width:100%; max-width:1100px; }
+    .title{ width:100%; margin:0 auto 20px auto; }
+    .title img{ width:100%; height:auto; display:block; }
     .gallery{
       display:flex;
       flex-direction:column;
@@ -44,179 +48,116 @@
       height:auto;
       display:block;
       border-radius:8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);
+      cursor:pointer;
+      transition:transform 0.3s,box-shadow 0.3s;
     }
-    .gallery img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    .gallery img:hover{
+      transform:scale(1.02);
+      box-shadow:0 8px 25px rgba(255,255,255,0.1);
     }
-
-    .note{
-      text-align:center;
-      color:#666;
-      font-size:14px;
-      margin:18px 0;
-    }
-
-    .extra-text{
-      text-align:center;
-      margin:10px 0;
+    .note{text-align:center;color:#666;font-size:14px;margin:18px 0;}
+    .extra-text{text-align:center;margin:10px 0;font-size:16px;}
+    .extra-text.red{color:red;font-weight:bold;}
+    .pdf-download{text-align:center;margin:20px 0;}
+    .pdf-download a{
+      display:inline-block;
+      padding:12px 24px;
+      background-color:#333;
+      color:white;
+      text-decoration:none;
+      border-radius:6px;
       font-size:16px;
+      transition:background-color 0.3s,transform 0.2s;
+      border:1px solid #555;
     }
-    .extra-text.red{
-      color:red;
-      font-weight:bold;
+    .pdf-download a:hover{background-color:#555;transform:translateY(-2px);}
+    .lightbox{
+      display:none;
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background-color:rgba(0,0,0,0.95);
+      z-index:1000;text-align:center;
     }
-
-    /* PDF Download Link Styles */
-    .pdf-download {
-      text-align: center;
-      margin: 20px 0;
+    .lightbox img{
+      max-width:95%;
+      max-height:95%;
+      margin:auto;
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      border-radius:8px;
     }
-    .pdf-download a {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      transition: background-color 0.3s, transform 0.2s;
-      border: 1px solid #555;
+    .close{
+      position:absolute;
+      top:20px;right:30px;
+      color:white;font-size:40px;font-weight:bold;
+      cursor:pointer;z-index:1001;
+      transition:color 0.3s;
     }
-    .pdf-download a:hover {
-      background-color: #555;
-      transform: translateY(-2px);
-    }
-
-    /* Lightbox styles */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      text-align: center;
-    }
-    .lightbox img {
-      max-width: 95%;
-      max-height: 95%;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 8px;
-    }
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1001;
-      transition: color 0.3s;
-    }
-    .close:hover {
-      color: #ff4444;
-    }
-
+    .close:hover{color:#ff4444;}
     @media (max-width:520px){
-      .gallery img{ max-width:100%; border-radius:6px; }
-      .lightbox img {
-        max-width: 98%;
-        max-height: 98%;
-      }
-      .close {
-        top: 10px;
-        right: 15px;
-        font-size: 30px;
-      }
-      .pdf-download a {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
+      .gallery img{max-width:100%;border-radius:6px;}
+      .lightbox img{max-width:98%;max-height:98%;}
+      .close{top:10px;right:15px;font-size:30px;}
+      .pdf-download a{padding:10px 20px;font-size:14px;}
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="title">
-      <img src="lol1.png" alt="ose — title" />
+      <img src="lol1.png" alt="O.S.E. — Otroci Sintetične Eve naslov" />
     </div>
 
     <div class="gallery">
-      <img src="cc1.png" alt="xx1" onclick="openLightbox(this)" />
-      <img src="cc2.png" alt="xx2" onclick="openLightbox(this)" />
-      <img src="cc3.png" alt="xx3" onclick="openLightbox(this)" />
-      <img src="cc4.png" alt="xx4" onclick="openLightbox(this)" />
-      <img src="cc5.png" alt="xx5" onclick="openLightbox(this)" />
-      <img src="ll1.png" alt="yy1" onclick="openLightbox(this)" />
-      <img src="ll2.png" alt="yy2" onclick="openLightbox(this)" />
-      <img src="ll3.png" alt="yy3" onclick="openLightbox(this)" />
-      <img src="ll4.png" alt="yy4" onclick="openLightbox(this)" />
-      <img src="uu1.png" alt="zz3" onclick="openLightbox(this)" />
-      <img src="uu2.png" alt="zz4" onclick="openLightbox(this)" />
+      <img src="cc1.png" alt="vizualna serija 1" onclick="openLightbox(this)" />
+      <img src="cc2.png" alt="vizualna serija 2" onclick="openLightbox(this)" />
+      <img src="cc3.png" alt="vizualna serija 3" onclick="openLightbox(this)" />
+      <img src="cc4.png" alt="vizualna serija 4" onclick="openLightbox(this)" />
+      <img src="cc5.png" alt="vizualna serija 5" onclick="openLightbox(this)" />
+      <img src="ll1.png" alt="vizualna serija 6" onclick="openLightbox(this)" />
+      <img src="ll2.png" alt="vizualna serija 7" onclick="openLightbox(this)" />
+      <img src="ll3.png" alt="vizualna serija 8" onclick="openLightbox(this)" />
+      <img src="ll4.png" alt="vizualna serija 9" onclick="openLightbox(this)" />
+      <img src="uu1.png" alt="vizualna serija 10" onclick="openLightbox(this)" />
+      <img src="uu2.png" alt="vizualna serija 11" onclick="openLightbox(this)" />
     </div>
 
-    <!-- Lightbox container -->
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
       <span class="close" onclick="closeLightbox()">&times;</span>
       <img id="lightbox-img" src="" alt="" />
     </div>
 
-    <!-- Added text below -->
+    <!-- Tekst in PDF povezava -->
     <p class="extra-text">Črna erotika okuži srne</p>
-    
-    <!-- PDF Download Link -->
     <div class="pdf-download">
-      <a href="OTROCI-SINTETIČNE-EV_-manifestoE.pdf" download="OTROCI-SINTETIČNE-EV_-manifestoE.pdf">
+      <a href="OTROCI-SINTETIČNE-EV_-manifestoE.pdf" download>
         Prenesi manifest (PDF)
       </a>
     </div>
-    
     <p class="extra-text red">otroci.sinteticne.eve@gmail.com</p>
   </div>
 
   <script>
-    // Lightbox functionality
     function openLightbox(img) {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       lightbox.style.display = 'block';
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
-      
-      // Prevent the click from closing the lightbox immediately
       event.stopPropagation();
     }
-
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
     }
-
-    // Close lightbox when clicking outside the image
     document.getElementById('lightbox').addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeLightbox();
-      }
+      if (event.target === this) closeLightbox();
     });
-
-    // Close lightbox with Escape key
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeLightbox();
-      }
+      if (event.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
 </html>
-
