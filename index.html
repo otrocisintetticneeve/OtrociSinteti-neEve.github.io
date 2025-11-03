@@ -3,162 +3,186 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>O.S.E. – Otroci Sintetične Eve | OSE Projekt</title>
-  <meta name="description" content="O.S.E. (Otroci Sintetične Eve) –  telo in tehnologija." />
-  <meta name="keywords" content="O.S.E., OSE, ose, Otroci Sintetične Eve, otroci sinteticne eve, ose projekt, ose umetnost, ose art, ose skupnost, ose filozofija, ose ideja, ose razlaga, ose pomen, kaj je ose, ose ai, ose umetniki, ose digitalni svet, ose organizacija, ose kolektiv, ose prihodnost, ose tehnologija, ose manifest, ose projekt slovenija, ose koncept, ose meaning" />
+  <meta name="description" content="O.S.E. (Otroci Sintetične Eve) – telo in tehnologija." />
   <meta name="author" content="O.S.E. – Otroci Sintetične Eve" />
-
-  <meta property="og:title" content="O.S.E. – Otroci Sintetične Eve | OSE Projekt" />
-  <meta property="og:description" content="Uradna stran projekta O.S.E. (Otroci Sintetične Eve) – umetnost, filozofija, telo, tehnologija in prihodnost." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://otrocsinteticneeve.github.io/" />
-  <meta property="og:image" content="https://otrocsinteticneeve.github.io/lol1.png" />
-
-  <meta name="theme-color" content="#000000">
   <link rel="icon" href="lol1.png" type="image/png">
 
-  <!-- Structured Data for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "O.S.E. – Otroci Sintetične Eve",
-    "alternateName": ["OSE", "ose", "Otroci Sintetične Eve", "OSE Projekt", "O.S.E. Projekt"],
-    "url": "https://otrocsinteticneeve.github.io/",
-    "logo": "https://otrocsinteticneeve.github.io/lol1.png",
-    "description": "O.S.E. – Otroci Sintetične Eve je umetniški kolektiv, ki raziskuje povezavo med umetnostjo, telesom, umetno inteligenco in prihodnostjo."
-  }
-  </script>
-
-  <!-- FAQ schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Kaj je OSE?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OSE pomeni Otroci Sintetične Eve – umetniški projekt, ki povezuje umetnost, telo, tehnologijo in umetno inteligenco."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "OSE meaning",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OSE (Otroci Sintetične Eve) predstavlja simbolno rojstvo nove generacije – umetni izraz med človekom in strojem."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "OSE filozofija",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Filozofija OSE temelji na združitvi umetnosti, znanosti in tehnologije kot poti do razumevanja človeške in sintetične narave."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "OSE projekt Slovenija",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OSE – Otroci Sintetične Eve je slovenski umetniški projekt, ki raziskuje odnos med človekom, digitalnim svetom in umetno inteligenco."
-        }
-      }
-    ]
-  }
-  </script>
-
   <style>
-    html,body{ height:100%; margin:0; }
-    body{
-      background:#000;
-      color:#fff;
-      font-family:system-ui, -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      -webkit-font-smoothing:antialiased;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:0;
-    }
-    .wrap{ width:100%; max-width:1100px; }
-    .title{ width:100%; margin:0 auto 20px auto; }
-    .title img{ width:100%; height:auto; display:block; }
-    .gallery{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      align-items:center;
-      padding:16px;
-    }
-    .gallery img{
-      width:100%;
-      max-width:900px;
-      height:auto;
-      display:block;
-      border-radius:8px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.6);
-      cursor:pointer;
-      transition:transform 0.3s,box-shadow 0.3s;
-    }
-    .gallery img:hover{
-      transform:scale(1.02);
-      box-shadow:0 8px 25px rgba(255,255,255,0.1);
-    }
-    .note{text-align:center;color:#666;font-size:14px;margin:18px 0;}
-    .extra-text{text-align:center;margin:10px 0;font-size:16px;}
-    .extra-text.red{color:red;font-weight:bold;}
-    .pdf-download{text-align:center;margin:20px 0;}
-    .pdf-download a{
-      display:inline-block;
-      padding:12px 24px;
-      background-color:#333;
-      color:white;
-      text-decoration:none;
-      border-radius:6px;
-      font-size:16px;
-      transition:background-color 0.3s,transform 0.2s;
-      border:1px solid #555;
-    }
-    .pdf-download a:hover{background-color:#555;transform:translateY(-2px);}
-    .lightbox{
-      display:none;
-      position:fixed;
-      top:0;left:0;width:100%;height:100%;
-      background-color:rgba(0,0,0,0.95);
-      z-index:1000;text-align:center;
-    }
-    .lightbox img{
-      max-width:95%;
-      max-height:95%;
-      margin:auto;
-      position:absolute;
-      top:0;left:0;right:0;bottom:0;
-      border-radius:8px;
-    }
-    .close{
-      position:absolute;
-      top:20px;right:30px;
-      color:white;font-size:40px;font-weight:bold;
-      cursor:pointer;z-index:1001;
-      transition:color 0.3s;
-    }
-    .close:hover{color:#ff4444;}
-    @media (max-width:520px){
-      .gallery img{max-width:100%;border-radius:6px;}
-      .lightbox img{max-width:98%;max-height:98%;}
-      .close{top:10px;right:15px;font-size:30px;}
-      .pdf-download a{padding:10px 20px;font-size:14px;}
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
     }
 
-    .seo-text {
-      visibility:hidden;
-      height:0;
-      overflow:hidden;
+    .wrap {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .title img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    /* ----- Zavihki ----- */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 12px 24px;
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.3s, background 0.3s;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .tab.active {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ----- Galerija ----- */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      text-align: center;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: color 0.3s;
+    }
+
+    .close:hover {
+      color: #ff4444;
+    }
+
+    /* ----- Gumbi ----- */
+    .download-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .download-section a {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      border: 1px solid #555;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .download-section a:hover {
+      background-color: #555;
+      transform: translateY(-2px);
+    }
+
+    /* ----- Poezija in Manifesto ----- */
+    .content-block {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .content-block h2 {
+      font-family: "Garamond", "Times New Roman", serif;
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #b30000;
+      letter-spacing: 0.5px;
+    }
+
+    .extra-text {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .extra-text.red {
+      color: red;
+      font-weight: bold;
+    }
+
+    @media (max-width:520px){
+      .gallery img { max-width:100%; border-radius:6px; }
+      .close{ top:10px; right:15px; font-size:30px; }
+      .download-section a { padding:10px 20px; font-size:14px; }
     }
   </style>
 </head>
@@ -169,47 +193,68 @@
       <img src="lol1.png" alt="O.S.E. – Otroci Sintetične Eve logo" />
     </div>
 
-    <div class="gallery">
-      <img src="cc1.png" alt="OSE vizualna serija 1 – umetnost in tehnologija" onclick="openLightbox(this)" />
-      <img src="cc2.png" alt="OSE vizualna serija 2 – digitalna umetnost" onclick="openLightbox(this)" />
-      <img src="cc3.png" alt="OSE vizualna serija 3 – telo in stroj" onclick="openLightbox(this)" />
-      <img src="cc4.png" alt="OSE vizualna serija 4 – Otroci Sintetične Eve" onclick="openLightbox(this)" />
-      <img src="cc5.png" alt="OSE vizualna serija 5 – vizualna umetnost" onclick="openLightbox(this)" />
-      <img src="ll1.png" alt="OSE vizualna serija 6 – sintetična evolucija" onclick="openLightbox(this)" />
-      <img src="ll2.png" alt="OSE vizualna serija 7 – umetna inteligenca" onclick="openLightbox(this)" />
-      <img src="ll3.png" alt="OSE vizualna serija 8 – prihodnost umetnosti" onclick="openLightbox(this)" />
-      <img src="ll4.png" alt="OSE vizualna serija 9 – umetnost prihodnosti" onclick="openLightbox(this)" />
-      <img src="uu1.png" alt="OSE vizualna serija 10 – digitalna človečnost" onclick="openLightbox(this)" />
-      <img src="uu2.png" alt="OSE vizualna serija 11 – Otroci Sintetične Eve eksperiment" onclick="openLightbox(this)" />
+    <!-- Zavihki -->
+    <div class="tabs">
+      <div class="tab active" onclick="openTab(event, 'galerija')">Galerija</div>
+      <div class="tab" onclick="openTab(event, 'poezija')">Poezija</div>
+      <div class="tab" onclick="openTab(event, 'manifesto')">Manifesto</div>
     </div>
 
+    <!-- GALERIJA -->
+    <div id="galerija" class="tab-content active">
+      <div class="gallery">
+        <img src="cc1.png" alt="OSE vizualna serija 1" onclick="openLightbox(this)" />
+        <img src="cc2.png" alt="OSE vizualna serija 2" onclick="openLightbox(this)" />
+        <img src="cc3.png" alt="OSE vizualna serija 3" onclick="openLightbox(this)" />
+        <img src="cc4.png" alt="OSE vizualna serija 4" onclick="openLightbox(this)" />
+        <img src="cc5.png" alt="OSE vizualna serija 5" onclick="openLightbox(this)" />
+        <img src="ll1.png" alt="OSE vizualna serija 6" onclick="openLightbox(this)" />
+        <img src="ll2.png" alt="OSE vizualna serija 7" onclick="openLightbox(this)" />
+        <img src="ll3.png" alt="OSE vizualna serija 8" onclick="openLightbox(this)" />
+        <img src="ll4.png" alt="OSE vizualna serija 9" onclick="openLightbox(this)" />
+        <img src="uu1.png" alt="OSE vizualna serija 10" onclick="openLightbox(this)" />
+        <img src="uu2.png" alt="OSE vizualna serija 11" onclick="openLightbox(this)" />
+      </div>
+    </div>
+
+    <!-- POEZIJA -->
+    <div id="poezija" class="tab-content">
+      <div class="content-block">
+        <h2>Urlik: poezije</h2>
+        <div class="download-section">
+          <a href="Urlik poezije.docx" download>Prenesi zbirko (Word)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANIFESTO -->
+    <div id="manifesto" class="tab-content">
+      <div class="content-block">
+        <h2>Manifesto</h2>
+        <div class="download-section">
+          <a href="OTROCI-SINTETIČNE-EV_-manifestoE.pdf" download>Prenesi manifest (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
       <span class="close" onclick="closeLightbox()">&times;</span>
       <img id="lightbox-img" src="" alt="" />
     </div>
 
-    <p class="extra-text">Črna erotika okuži srne</p> 
-
-    <div class="pdf-download">
-      <a href="OTROCI-SINTETIČNE-EV_-manifestoE.pdf" download>
-        Prenesi manifest (PDF)
-      </a>
-    </div>
-
+    <p class="extra-text">Črna erotika okuži srne</p>
     <p class="extra-text red">otroci.sinteticne.eve@gmail.com</p>
-
-    <!-- Skriti SEO opis za Google -->
-    <div class="seo-text">
-      OSE pomeni Otroci Sintetične Eve. Projekt O.S.E. združuje umetnost, znanost in tehnologijo.
-      OSE filozofija temelji na ideji združitve umetnosti in stroja. 
-      OSE projekt Slovenija predstavlja umetniški kolektiv umetnikov, raziskovalcev in vizionarjev.
-      Kaj je OSE? OSE je umetniško gibanje prihodnosti. 
-      OSE meaning: Children of Synthetic Eve – symbolic connection between human and synthetic being.
-      ose projekt, ose ideja, ose koncept, ose umetniki, ose digitalni svet, ose ai, ose prihodnost.
-    </div>
   </div>
 
   <script>
+    function openTab(event, tabId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
     function openLightbox(img) {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
@@ -218,16 +263,14 @@
       lightboxImg.alt = img.alt;
       event.stopPropagation();
     }
+
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
     }
-    document.getElementById('lightbox').addEventListener('click', function(event) {
-      if (event.target === this) closeLightbox();
-    });
+
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
 </html>
-
