@@ -32,7 +32,6 @@
       margin-bottom: 20px;
     }
 
-    /* ----- Zavihki ----- */
     .tabs {
       display: flex;
       justify-content: center;
@@ -66,7 +65,6 @@
       display: block;
     }
 
-    /* ----- Galerija ----- */
     .gallery {
       display: flex;
       flex-direction: column;
@@ -131,30 +129,6 @@
       color: #ff4444;
     }
 
-    /* ----- Gumbi ----- */
-    .download-section {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .download-section a {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      border: 1px solid #555;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .download-section a:hover {
-      background-color: #555;
-      transform: translateY(-2px);
-    }
-
-    /* ----- Poezija in Manifesto ----- */
     .content-block {
       text-align: center;
       padding: 60px 20px;
@@ -182,7 +156,6 @@
     @media (max-width:520px){
       .gallery img { max-width:100%; border-radius:6px; }
       .close{ top:10px; right:15px; font-size:30px; }
-      .download-section a { padding:10px 20px; font-size:14px; }
     }
   </style>
 </head>
@@ -193,7 +166,6 @@
       <img src="lol1.png" alt="O.S.E. – Otroci Sintetične Eve logo" />
     </div>
 
-    <!-- Zavihki -->
     <div class="tabs">
       <div class="tab active" onclick="openTab(event, 'galerija')">Galerija</div>
       <div class="tab" onclick="openTab(event, 'poezija')">Poezija</div>
@@ -221,8 +193,15 @@
     <div id="poezija" class="tab-content">
       <div class="content-block">
         <h2>Ulrik:Poezije</h2>
-        <div class="download-section">
-          <a href="UlrikPoezije.docx" download>Prenesi zbirko (Word)</a>
+        <div class="gallery">
+          <img src="om1.png" alt="Poezija 1" onclick="openLightbox(this)" />
+          <img src="om2.png" alt="Poezija 2" onclick="openLightbox(this)" />
+          <img src="om3.png" alt="Poezija 3" onclick="openLightbox(this)" />
+          <img src="om4.png" alt="Poezija 4" onclick="openLightbox(this)" />
+          <img src="om5.png" alt="Poezija 5" onclick="openLightbox(this)" />
+          <img src="om6.png" alt="Poezija 6" onclick="openLightbox(this)" />
+          <img src="om7.png" alt="Poezija 7" onclick="openLightbox(this)" />
+          <img src="om8.png" alt="Poezija 8" onclick="openLightbox(this)" />
         </div>
       </div>
     </div>
@@ -231,8 +210,25 @@
     <div id="manifesto" class="tab-content">
       <div class="content-block">
         <h2>Manifesto</h2>
-        <div class="download-section">
-          <a href="OTROCI-SINTETIČNE-EV_-manifestoE.pdf" download>Prenesi manifest (PDF)</a>
+        <div class="gallery">
+          <img src="up1.png" alt="Manifesto 1" onclick="openLightbox(this)" />
+          <img src="up2.png" alt="Manifesto 2" onclick="openLightbox(this)" />
+          <img src="up3.png" alt="Manifesto 3" onclick="openLightbox(this)" />
+          <img src="up4.png" alt="Manifesto 4" onclick="openLightbox(this)" />
+          <img src="up5.png" alt="Manifesto 5" onclick="openLightbox(this)" />
+          <img src="up6.png" alt="Manifesto 6" onclick="openLightbox(this)" />
+          <img src="up7.png" alt="Manifesto 7" onclick="openLightbox(this)" />
+          <img src="up8.png" alt="Manifesto 8" onclick="openLightbox(this)" />
+          <img src="up9.png" alt="Manifesto 9" onclick="openLightbox(this)" />
+          <img src="up10.png" alt="Manifesto 10" onclick="openLightbox(this)" />
+          <img src="up11.png" alt="Manifesto 11" onclick="openLightbox(this)" />
+          <img src="up12.png" alt="Manifesto 12" onclick="openLightbox(this)" />
+          <img src="up13.png" alt="Manifesto 13" onclick="openLightbox(this)" />
+          <img src="up14.png" alt="Manifesto 14" onclick="openLightbox(this)" />
+          <img src="up15.png" alt="Manifesto 15" onclick="openLightbox(this)" />
+          <img src="up16.png" alt="Manifesto 16" onclick="openLightbox(this)" />
+          <img src="up17.png" alt="Manifesto 17" onclick="openLightbox(this)" />
+          <img src="up18.png" alt="Manifesto 18" onclick="openLightbox(this)" />
         </div>
       </div>
     </div>
@@ -274,4 +270,3 @@
   </script>
 </body>
 </html>
-
