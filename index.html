@@ -7,7 +7,6 @@
   <meta name="description" content="O.S.E. (Otroci Sintetične Eve) – telo in tehnologija." />
   <meta name="author" content="O.S.E. – Otroci Sintetične Eve" />
   <link rel="icon" href="lol1.png" type="image/png">
-
   <style>
     html, body {
       height: 100%;
@@ -19,26 +18,22 @@
       align-items: flex-start;
       justify-content: center;
     }
-
     .wrap {
       width: 100%;
       max-width: 1100px;
     }
-
     .title img {
       width: 100%;
       height: auto;
       display: block;
       margin-bottom: 20px;
     }
-
     .tabs {
       display: flex;
       justify-content: center;
       border-bottom: 1px solid #333;
       margin-bottom: 20px;
     }
-
     .tab {
       padding: 12px 24px;
       cursor: pointer;
@@ -47,24 +42,19 @@
       font-size: 16px;
       letter-spacing: 0.5px;
     }
-
     .tab.active {
       color: #fff;
       border-bottom: 2px solid #fff;
     }
-
     .tab:hover {
       color: #fff;
     }
-
     .tab-content {
       display: none;
     }
-
     .tab-content.active {
       display: block;
     }
-
     .gallery {
       display: flex;
       flex-direction: column;
@@ -72,7 +62,6 @@
       align-items: center;
       padding: 16px;
     }
-
     .gallery img {
       width: 100%;
       max-width: 900px;
@@ -83,12 +72,10 @@
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .gallery img:hover {
       transform: scale(1.02);
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
     }
-
     .lightbox {
       display: none;
       position: fixed;
@@ -100,7 +87,6 @@
       z-index: 1000;
       text-align: center;
     }
-
     .lightbox img {
       max-width: 95%;
       max-height: 95%;
@@ -112,7 +98,6 @@
       bottom: 0;
       border-radius: 8px;
     }
-
     .close {
       position: absolute;
       top: 20px;
@@ -124,16 +109,13 @@
       z-index: 1001;
       transition: color 0.3s;
     }
-
     .close:hover {
       color: #ff4444;
     }
-
     .content-block {
       text-align: center;
       padding: 60px 20px;
     }
-
     .content-block h2 {
       font-family: "Garamond", "Times New Roman", serif;
       font-size: 30px;
@@ -141,31 +123,33 @@
       color: #b30000;
       letter-spacing: 0.5px;
     }
-
     .extra-text {
       text-align: center;
       margin: 10px 0;
       font-size: 16px;
     }
-
     .extra-text.red {
       color: red;
       font-weight: bold;
     }
-
     @media (max-width:520px){
-      .gallery img { max-width:100%; border-radius:6px; }
-      .close{ top:10px; right:15px; font-size:30px; }
+      .gallery img {
+        max-width:100%;
+        border-radius:6px;
+      }
+      .close{
+        top:10px;
+        right:15px;
+        font-size:30px;
+      }
     }
   </style>
 </head>
-
 <body>
   <div class="wrap">
     <div class="title">
       <img src="lol1.png" alt="O.S.E. – Otroci Sintetične Eve logo" />
     </div>
-
     <div class="tabs">
       <div class="tab active" onclick="openTab(event, 'galerija')">Galerija</div>
       <div class="tab" onclick="openTab(event, 'poezija')">Poezija</div>
@@ -186,6 +170,12 @@
         <img src="ll4.png" alt="OSE vizualna serija 9" onclick="openLightbox(this)" />
         <img src="uu1.png" alt="OSE vizualna serija 10" onclick="openLightbox(this)" />
         <img src="uu2.png" alt="OSE vizualna serija 11" onclick="openLightbox(this)" />
+        <img src="uu4.png" alt="OSE vizualna serija 14" onclick="openLightbox(this)" />
+        <img src="uu5.png" alt="OSE vizualna serija 15" onclick="openLightbox(this)" />
+        <img src="uu6.png" alt="OSE vizualna serija 16" onclick="openLightbox(this)" />
+        <img src="uu7.png" alt="OSE vizualna serija 17" onclick="openLightbox(this)" />
+        <img src="ll5.png" alt="OSE vizualna serija 12" onclick="openLightbox(this)" />
+        <img src="ll6.png" alt="OSE vizualna serija 13" onclick="openLightbox(this)" />
       </div>
     </div>
 
@@ -212,6 +202,7 @@
           <img src="up16.png" alt="Poezija 16" onclick="openLightbox(this)" />
           <img src="up17.png" alt="Poezija 17" onclick="openLightbox(this)" />
           <img src="up18.png" alt="Poezija 18" onclick="openLightbox(this)" />
+          <img src="up19.png" alt="Poezija 19" onclick="openLightbox(this)" />
         </div>
       </div>
     </div>
