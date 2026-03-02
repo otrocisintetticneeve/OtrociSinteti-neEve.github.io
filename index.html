@@ -37,11 +37,16 @@ html, body {
   padding: 12px 24px;
   cursor: pointer;
   color: #ccc;
+  transition: 0.3s;
 }
 
 .tab.active {
   color: #fff;
   border-bottom: 2px solid #fff;
+}
+
+.tab:hover {
+  color: #fff;
 }
 
 .tab-content {
@@ -65,6 +70,11 @@ html, body {
   color: #888;
   padding: 8px 14px;
   border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.volume-tab:hover {
+  color: #fff;
 }
 
 .volume-tab.active {
@@ -79,11 +89,23 @@ html, body {
   align-items: center;
 }
 
-.gallery img {
+/* 🔥 ORIGINAL IMAGE EFFECT VRNJEN */
+.gallery img,
+.volume-content img {
   width: 100%;
   max-width: 900px;
+  height: auto;
+  display: block;
   border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover,
+.volume-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
 .volume-content {
@@ -113,6 +135,7 @@ html, body {
   position:absolute;
   top:0; left:0; right:0; bottom:0;
   margin:auto;
+  border-radius:8px;
 }
 
 .close {
@@ -141,7 +164,6 @@ html, body {
 <!-- GALERIJA -->
 <div id="galerija" class="tab-content active">
 
-<!-- Volume Tabs -->
 <div class="volume-tabs">
 <div class="volume-tab active" onclick="openVolume(event,'novo')">Novo</div>
 <div class="volume-tab" onclick="openVolume(event,'vol1')">Vol.1</div>
@@ -188,17 +210,14 @@ html, body {
 
 </div>
 
-<!-- POEZIJA -->
 <div id="poezija" class="tab-content">
 <div style="padding:60px;text-align:center;">Poezija</div>
 </div>
 
-<!-- MANIFESTO -->
 <div id="manifesto" class="tab-content">
 <div style="padding:60px;text-align:center;">Manifesto</div>
 </div>
 
-<!-- Lightbox -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
 <span class="close">&times;</span>
 <img id="lightbox-img">
