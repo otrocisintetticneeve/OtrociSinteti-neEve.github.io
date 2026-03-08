@@ -58,6 +58,7 @@ html, body {
 }
 
 /* VOLUME TABS */
+
 .volume-tabs {
   display: flex;
   justify-content: center;
@@ -89,7 +90,8 @@ html, body {
   align-items: center;
 }
 
-/* 🔥 ORIGINAL IMAGE EFFECT VRNJEN */
+/* IMAGE EFFECT */
+
 .gallery img,
 .volume-content img {
   width: 100%;
@@ -97,7 +99,7 @@ html, body {
   height: auto;
   display: block;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -105,7 +107,7 @@ html, body {
 .gallery img:hover,
 .volume-content img:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.1);
 }
 
 .volume-content {
@@ -119,12 +121,15 @@ html, body {
   align-items: center;
 }
 
-/* Lightbox */
+/* LIGHTBOX */
+
 .lightbox {
   display: none;
   position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background: rgba(0,0,0,0.95);
   z-index:1000;
 }
@@ -133,7 +138,10 @@ html, body {
   max-width:95%;
   max-height:95%;
   position:absolute;
-  top:0; left:0; right:0; bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
   margin:auto;
   border-radius:8px;
 }
@@ -145,14 +153,35 @@ html, body {
   font-size:40px;
   cursor:pointer;
 }
+
+/* INSTAGRAM FOOTER */
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="wrap">
 
 <div class="title">
-<img src="lol1.png" />
+<img src="lol1.png">
 </div>
 
 <div class="tabs">
@@ -162,6 +191,7 @@ html, body {
 </div>
 
 <!-- GALERIJA -->
+
 <div id="galerija" class="tab-content active">
 
 <div class="volume-tabs">
@@ -169,17 +199,19 @@ html, body {
 <div class="volume-tab" onclick="openVolume(event,'vol1')">Vol.1</div>
 <div class="volume-tab" onclick="openVolume(event,'vol2')">Vol.2</div>
 <div class="volume-tab" onclick="openVolume(event,'vol3')">Vol.3</div>
+<div class="volume-tab" onclick="openVolume(event,'vol4')">Vol.4</div>
 </div>
 
 <!-- NOVO -->
+
 <div id="novo" class="volume-content active">
-<img src="uu8.png" onclick="openLightbox(this)">
-<img src="uu9.png" onclick="openLightbox(this)">
-<img src="uu10.png" onclick="openLightbox(this)">
-<img src="uu11.png" onclick="openLightbox(this)">
+<img src="uu12.png" onclick="openLightbox(this)">
+<img src="ll7.png" onclick="openLightbox(this)">
+<img src="cc6.png" onclick="openLightbox(this)">
 </div>
 
 <!-- VOL1 -->
+
 <div id="vol1" class="volume-content">
 <img src="cc1.png" onclick="openLightbox(this)">
 <img src="cc2.png" onclick="openLightbox(this)">
@@ -190,6 +222,7 @@ html, body {
 </div>
 
 <!-- VOL2 -->
+
 <div id="vol2" class="volume-content">
 <img src="ll2.png" onclick="openLightbox(this)">
 <img src="ll3.png" onclick="openLightbox(this)">
@@ -199,6 +232,7 @@ html, body {
 </div>
 
 <!-- VOL3 -->
+
 <div id="vol3" class="volume-content">
 <img src="uu4.png" onclick="openLightbox(this)">
 <img src="uu5.png" onclick="openLightbox(this)">
@@ -206,6 +240,15 @@ html, body {
 <img src="uu7.png" onclick="openLightbox(this)">
 <img src="ll5.png" onclick="openLightbox(this)">
 <img src="ll6.png" onclick="openLightbox(this)">
+</div>
+
+<!-- VOL4 -->
+
+<div id="vol4" class="volume-content">
+<img src="uu8.png" onclick="openLightbox(this)">
+<img src="uu9.png" onclick="openLightbox(this)">
+<img src="uu10.png" onclick="openLightbox(this)">
+<img src="uu11.png" onclick="openLightbox(this)">
 </div>
 
 </div>
@@ -223,9 +266,18 @@ html, body {
 <img id="lightbox-img">
 </div>
 
+<!-- INSTAGRAM FOOTER -->
+
+<div class="footer">
+<a href="https://www.instagram.com/___o.s.e___/" target="_blank">
+Instagram — ___o.s.e___
+</a>
+</div>
+
 </div>
 
 <script>
+
 function openTab(event,id){
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
 document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
@@ -252,6 +304,7 @@ document.getElementById('lightbox').style.display='none';
 document.addEventListener('keydown',function(e){
 if(e.key==='Escape') closeLightbox();
 });
+
 </script>
 
 </body>
