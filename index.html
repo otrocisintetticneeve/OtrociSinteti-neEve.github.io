@@ -6,6 +6,7 @@
 <title>O.S.E. – Otroci Sintetične Eve | O.S.E.</title>
 
 <style>
+
 html, body {
   height: 100%;
   margin: 0;
@@ -25,6 +26,8 @@ html, body {
   width: 100%;
   margin-bottom: 20px;
 }
+
+/* TABS */
 
 .tabs {
   display: flex;
@@ -83,17 +86,12 @@ html, body {
   border-bottom: 1px solid #fff;
 }
 
-.gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: center;
-}
-
 /* IMAGE EFFECT */
 
 .gallery img,
-.volume-content img {
+.volume-content img,
+.poezija-gallery img,
+.manifesto-gallery img {
   width: 100%;
   max-width: 900px;
   height: auto;
@@ -101,14 +99,18 @@ html, body {
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.35s, box-shadow 0.35s;
 }
 
 .gallery img:hover,
-.volume-content img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+.volume-content img:hover,
+.poezija-gallery img:hover,
+.manifesto-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 35px rgba(255,0,0,0.2);
 }
+
+/* VOLUMES */
 
 .volume-content {
   display: none;
@@ -119,6 +121,14 @@ html, body {
   flex-direction: column;
   gap: 18px;
   align-items: center;
+}
+
+.poezija-gallery,
+.manifesto-gallery{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
 }
 
 /* LIGHTBOX */
@@ -154,7 +164,7 @@ html, body {
   cursor:pointer;
 }
 
-/* INSTAGRAM FOOTER */
+/* FOOTER */
 
 .footer {
   text-align: center;
@@ -171,6 +181,59 @@ html, body {
 
 .footer a:hover {
   color: #fff;
+}
+
+/* RED TEXT */
+
+.footer-text{
+  color:#ff0000;
+  font-size:16px;
+  margin-bottom:10px;
+  letter-spacing:2px;
+}
+
+/* GLITCH EFFECT */
+
+.glitch{
+  position:relative;
+  display:inline-block;
+}
+
+.glitch::before,
+.glitch::after{
+  content:attr(data-text);
+  position:absolute;
+  left:0;
+  width:100%;
+  overflow:hidden;
+}
+
+.glitch::before{
+  animation:glitch1 2s infinite;
+  color:#ff0000;
+}
+
+.glitch::after{
+  animation:glitch2 2s infinite;
+  color:#ff0000;
+}
+
+@keyframes glitch1{
+  0%{transform:translate(0)}
+  20%{transform:translate(-2px,2px)}
+  40%{transform:translate(-2px,-2px)}
+  60%{transform:translate(2px,2px)}
+  80%{transform:translate(2px,-2px)}
+  100%{transform:translate(0)}
+}
+
+@keyframes glitch2{
+  0%{transform:translate(0)}
+  20%{transform:translate(2px,-2px)}
+  40%{transform:translate(2px,2px)}
+  60%{transform:translate(-2px,-2px)}
+  80%{transform:translate(-2px,2px)}
+  100%{transform:translate(0)}
 }
 
 </style>
@@ -202,15 +265,11 @@ html, body {
 <div class="volume-tab" onclick="openVolume(event,'vol4')">Vol.4</div>
 </div>
 
-<!-- NOVO -->
-
 <div id="novo" class="volume-content active">
 <img src="uu12.png" onclick="openLightbox(this)">
 <img src="ll7.png" onclick="openLightbox(this)">
 <img src="cc6.png" onclick="openLightbox(this)">
 </div>
-
-<!-- VOL1 -->
 
 <div id="vol1" class="volume-content">
 <img src="cc1.png" onclick="openLightbox(this)">
@@ -221,8 +280,6 @@ html, body {
 <img src="ll1.png" onclick="openLightbox(this)">
 </div>
 
-<!-- VOL2 -->
-
 <div id="vol2" class="volume-content">
 <img src="ll2.png" onclick="openLightbox(this)">
 <img src="ll3.png" onclick="openLightbox(this)">
@@ -230,8 +287,6 @@ html, body {
 <img src="uu1.png" onclick="openLightbox(this)">
 <img src="uu2.png" onclick="openLightbox(this)">
 </div>
-
-<!-- VOL3 -->
 
 <div id="vol3" class="volume-content">
 <img src="uu4.png" onclick="openLightbox(this)">
@@ -242,8 +297,6 @@ html, body {
 <img src="ll6.png" onclick="openLightbox(this)">
 </div>
 
-<!-- VOL4 -->
-
 <div id="vol4" class="volume-content">
 <img src="uu8.png" onclick="openLightbox(this)">
 <img src="uu9.png" onclick="openLightbox(this)">
@@ -253,12 +306,24 @@ html, body {
 
 </div>
 
+<!-- POEZIJA -->
+
 <div id="poezija" class="tab-content">
-<div style="padding:60px;text-align:center;">Poezija</div>
+<div class="poezija-gallery">
+<img src="poezija1.png" onclick="openLightbox(this)">
+<img src="poezija2.png" onclick="openLightbox(this)">
+<img src="poezija3.png" onclick="openLightbox(this)">
+</div>
 </div>
 
+<!-- MANIFESTO -->
+
 <div id="manifesto" class="tab-content">
-<div style="padding:60px;text-align:center;">Manifesto</div>
+<div class="manifesto-gallery">
+<img src="manifest1.png" onclick="openLightbox(this)">
+<img src="manifest2.png" onclick="openLightbox(this)">
+<img src="manifest3.png" onclick="openLightbox(this)">
+</div>
 </div>
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -266,12 +331,16 @@ html, body {
 <img id="lightbox-img">
 </div>
 
-<!-- INSTAGRAM FOOTER -->
-
 <div class="footer">
+
+<div class="footer-text glitch" data-text="Črna Erotika Okuži Srne">
+Črna Erotika Okuži Srne
+</div>
+
 <a href="https://www.instagram.com/___o.s.e___/" target="_blank">
 Instagram — ___o.s.e___
 </a>
+
 </div>
 
 </div>
