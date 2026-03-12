@@ -12,12 +12,7 @@
         margin: 0;
         background: #000;
         color: #fff;
-        font-family:
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          Arial;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
         display: flex;
         justify-content: center;
       }
@@ -31,8 +26,6 @@
         width: 100%;
         margin-bottom: 20px;
       }
-
-      /* TABS */
 
       .tabs {
         display: flex;
@@ -65,8 +58,6 @@
         display: block;
       }
 
-      /* VOLUME TABS */
-
       .volume-tabs {
         display: flex;
         justify-content: center;
@@ -91,8 +82,6 @@
         border-bottom: 1px solid #fff;
       }
 
-      /* IMAGE EFFECT */
-
       .gallery img,
       .volume-content img,
       .poezija-gallery img,
@@ -104,9 +93,7 @@
         border-radius: 8px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
         cursor: pointer;
-        transition:
-          transform 0.35s,
-          box-shadow 0.35s;
+        transition: transform 0.35s, box-shadow 0.35s;
       }
 
       .gallery img:hover,
@@ -116,8 +103,6 @@
         transform: scale(1.03);
         box-shadow: 0 10px 35px rgba(255, 0, 0, 0.2);
       }
-
-      /* VOLUMES */
 
       .volume-content {
         display: none;
@@ -137,8 +122,6 @@
         gap: 18px;
         align-items: center;
       }
-
-      /* LIGHTBOX */
 
       .lightbox {
         display: none;
@@ -171,8 +154,6 @@
         cursor: pointer;
       }
 
-      /* FOOTER */
-
       .footer {
         text-align: center;
         padding: 40px 20px;
@@ -190,16 +171,12 @@
         color: #fff;
       }
 
-      /* RED TEXT */
-
       .footer-text {
         color: #ff0000;
         font-size: 16px;
         margin-bottom: 10px;
         letter-spacing: 2px;
       }
-
-      /* GLITCH EFFECT */
 
       .glitch {
         position: relative;
@@ -226,45 +203,21 @@
       }
 
       @keyframes glitch1 {
-        0% {
-          transform: translate(0);
-        }
-        20% {
-          transform: translate(-2px, 2px);
-        }
-        40% {
-          transform: translate(-2px, -2px);
-        }
-        60% {
-          transform: translate(2px, 2px);
-        }
-        80% {
-          transform: translate(2px, -2px);
-        }
-        100% {
-          transform: translate(0);
-        }
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+        100% { transform: translate(0); }
       }
 
       @keyframes glitch2 {
-        0% {
-          transform: translate(0);
-        }
-        20% {
-          transform: translate(2px, -2px);
-        }
-        40% {
-          transform: translate(2px, 2px);
-        }
-        60% {
-          transform: translate(-2px, -2px);
-        }
-        80% {
-          transform: translate(-2px, 2px);
-        }
-        100% {
-          transform: translate(0);
-        }
+        0% { transform: translate(0); }
+        20% { transform: translate(2px, -2px); }
+        40% { transform: translate(2px, 2px); }
+        60% { transform: translate(-2px, -2px); }
+        80% { transform: translate(-2px, 2px); }
+        100% { transform: translate(0); }
       }
     </style>
   </head>
@@ -276,20 +229,18 @@
       </div>
 
       <div class="tabs">
-        <div class="tab active" onclick="openTab(event, 'galerija')">Galerija</div>
-        <div class="tab" onclick="openTab(event, 'poezija')">Poezija</div>
-        <div class="tab" onclick="openTab(event, 'manifesto')">Manifesto</div>
+        <div class="tab active" onclick="openTab(event,'galerija')">Galerija</div>
+        <div class="tab" onclick="openTab(event,'poezija')">Poezija</div>
+        <div class="tab" onclick="openTab(event,'manifesto')">Manifesto</div>
       </div>
-
-      <!-- GALERIJA -->
 
       <div id="galerija" class="tab-content active">
         <div class="volume-tabs">
-          <div class="volume-tab active" onclick="openVolume(event, 'novo')">Novo</div>
-          <div class="volume-tab" onclick="openVolume(event, 'vol1')">Vol.1</div>
-          <div class="volume-tab" onclick="openVolume(event, 'vol2')">Vol.2</div>
-          <div class="volume-tab" onclick="openVolume(event, 'vol3')">Vol.3</div>
-          <div class="volume-tab" onclick="openVolume(event, 'vol4')">Vol.4</div>
+          <div class="volume-tab active" onclick="openVolume(event,'novo')">Novo</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol1')">Vol.1</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol2')">Vol.2</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol3')">Vol.3</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol4')">Vol.4</div>
         </div>
 
         <div id="novo" class="volume-content active">
@@ -332,23 +283,19 @@
         </div>
       </div>
 
-      <!-- POEZIJA -->
-
       <div id="poezija" class="tab-content">
         <div class="poezija-gallery">
-          <img src="poezija1.png" onclick="openLightbox(this)" />
-          <img src="poezija2.png" onclick="openLightbox(this)" />
-          <img src="poezija3.png" onclick="openLightbox(this)" />
+          <img src="./poezija1.png" onclick="openLightbox(this)" />
+          <img src="./poezija2.png" onclick="openLightbox(this)" />
+          <img src="./poezija3.png" onclick="openLightbox(this)" />
         </div>
       </div>
 
-      <!-- MANIFESTO -->
-
       <div id="manifesto" class="tab-content">
         <div class="manifesto-gallery">
-          <img src="manifest1.png" onclick="openLightbox(this)" />
-          <img src="manifest2.png" onclick="openLightbox(this)" />
-          <img src="manifest3.png" onclick="openLightbox(this)" />
+          <img src="./manifest1.png" onclick="openLightbox(this)" />
+          <img src="./manifest2.png" onclick="openLightbox(this)" />
+          <img src="./manifest3.png" onclick="openLightbox(this)" />
         </div>
       </div>
 
@@ -358,38 +305,42 @@
       </div>
 
       <div class="footer">
-        <div class="footer-text glitch" data-text="Črna Erotika Okuži Srne">Črna Erotika Okuži Srne</div>
+        <div class="footer-text glitch" data-text="Črna Erotika Okuži Srne">
+          Črna Erotika Okuži Srne
+        </div>
 
-        <a href="https://www.instagram.com/___o.s.e___/" target="_blank">Instagram — ___o.s.e___</a>
+        <a href="https://www.instagram.com/___o.s.e___/" target="_blank">
+          Instagram — ___o.s.e___
+        </a>
       </div>
     </div>
 
     <script>
-      function openTab(event, id) {
-        document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
-        document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
-        event.currentTarget.classList.add("active");
-        document.getElementById(id).classList.add("active");
+      function openTab(event,id){
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        document.getElementById(id).classList.add('active');
       }
 
-      function openVolume(event, id) {
-        document.querySelectorAll(".volume-tab").forEach((t) => t.classList.remove("active"));
-        document.querySelectorAll(".volume-content").forEach((c) => c.classList.remove("active"));
-        event.currentTarget.classList.add("active");
-        document.getElementById(id).classList.add("active");
+      function openVolume(event,id){
+        document.querySelectorAll('.volume-tab').forEach(t=>t.classList.remove('active'));
+        document.querySelectorAll('.volume-content').forEach(c=>c.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        document.getElementById(id).classList.add('active');
       }
 
-      function openLightbox(img) {
-        document.getElementById("lightbox").style.display = "block";
-        document.getElementById("lightbox-img").src = img.src;
+      function openLightbox(img){
+        document.getElementById('lightbox').style.display='block';
+        document.getElementById('lightbox-img').src=img.src;
       }
 
-      function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
+      function closeLightbox(){
+        document.getElementById('lightbox').style.display='none';
       }
 
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeLightbox();
+      document.addEventListener('keydown',function(e){
+        if(e.key==='Escape') closeLightbox();
       });
     </script>
   </body>
