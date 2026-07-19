@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="Y7DgTlLGnAwg9FY2TGghV3cpmDDctQdEd1FoDzaZPzU" />
     <title>O.S.E. – Otroci Sintetične Eve | O.S.E.</title>
 
     <style>
-      html,
-      body {
+      html, body {
         height: 100%;
         margin: 0;
         background: #000;
@@ -46,23 +46,17 @@
         border-bottom: 2px solid #fff;
       }
 
-      .tab:hover {
-        color: #fff;
-      }
+      .tab:hover { color: #fff; }
 
-      .tab-content {
-        display: none;
-      }
-
-      .tab-content.active {
-        display: block;
-      }
+      .tab-content { display: none; }
+      .tab-content.active { display: block; }
 
       .volume-tabs {
         display: flex;
         justify-content: center;
         gap: 20px;
         margin-bottom: 20px;
+        flex-wrap: wrap;
       }
 
       .volume-tab {
@@ -73,9 +67,7 @@
         transition: 0.3s;
       }
 
-      .volume-tab:hover {
-        color: #fff;
-      }
+      .volume-tab:hover { color: #fff; }
 
       .volume-tab.active {
         color: #fff;
@@ -91,7 +83,7 @@
         height: auto;
         display: block;
         border-radius: 8px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.6);
         cursor: pointer;
         transition: transform 0.35s, box-shadow 0.35s;
       }
@@ -101,12 +93,10 @@
       .poezija-gallery img:hover,
       .manifesto-gallery img:hover {
         transform: scale(1.03);
-        box-shadow: 0 10px 35px rgba(255, 0, 0, 0.2);
+        box-shadow: 0 10px 35px rgba(255,0,0,0.2);
       }
 
-      .volume-content {
-        display: none;
-      }
+      .volume-content { display: none; }
 
       .volume-content.active {
         display: flex;
@@ -123,14 +113,29 @@
         align-items: center;
       }
 
+      .video-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .video-gallery video {
+        width: 100%;
+        max-width: 900px;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+        background: #111;
+        display: block;
+      }
+
       .lightbox {
         display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.95);
         z-index: 1000;
       }
 
@@ -138,18 +143,14 @@
         max-width: 95%;
         max-height: 95%;
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        top: 0; left: 0; right: 0; bottom: 0;
         margin: auto;
         border-radius: 8px;
       }
 
       .close {
         position: absolute;
-        top: 20px;
-        right: 30px;
+        top: 20px; right: 30px;
         font-size: 40px;
         cursor: pointer;
       }
@@ -167,9 +168,7 @@
         transition: 0.3s;
       }
 
-      .footer a:hover {
-        color: #fff;
-      }
+      .footer a:hover { color: #fff; }
 
       .footer-text {
         color: #ff0000;
@@ -187,8 +186,7 @@
       .glitch::after {
         content: attr(data-text);
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
         width: 100%;
         overflow: hidden;
       }
@@ -204,21 +202,21 @@
       }
 
       @keyframes glitch1 {
-        0% { transform: translate(0); }
+        0%  { transform: translate(0); }
         20% { transform: translate(-2px, 2px); }
         40% { transform: translate(-2px, -2px); }
         60% { transform: translate(2px, 2px); }
         80% { transform: translate(2px, -2px); }
-        100% { transform: translate(0); }
+        100%{ transform: translate(0); }
       }
 
       @keyframes glitch2 {
-        0% { transform: translate(0); }
+        0%  { transform: translate(0); }
         20% { transform: translate(2px, -2px); }
         40% { transform: translate(2px, 2px); }
         60% { transform: translate(-2px, -2px); }
         80% { transform: translate(-2px, 2px); }
-        100% { transform: translate(0); }
+        100%{ transform: translate(0); }
       }
     </style>
   </head>
@@ -235,6 +233,7 @@
         <div class="tab" onclick="openTab(event,'manifesto')">Manifesto</div>
       </div>
 
+      <!-- GALERIJA -->
       <div id="galerija" class="tab-content active">
         <div class="volume-tabs">
           <div class="volume-tab active" onclick="openVolume(event,'novo')">Novo</div>
@@ -242,6 +241,14 @@
           <div class="volume-tab" onclick="openVolume(event,'vol2')">Vol.2</div>
           <div class="volume-tab" onclick="openVolume(event,'vol3')">Vol.3</div>
           <div class="volume-tab" onclick="openVolume(event,'vol4')">Vol.4</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol5')">Vol.5</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol6')">Vol.6</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol7')">Vol.7</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol8')">Vol.8</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol9')">Vol.9</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol10')">Vol.10</div>
+          <div class="volume-tab" onclick="openVolume(event,'vol11')">Vol.11</div>
+          <div class="volume-tab" onclick="openVolume(event,'video')">Video</div>
         </div>
 
         <div id="novo" class="volume-content active">
@@ -282,10 +289,81 @@
           <img src="uu10.png" onclick="openLightbox(this)" />
           <img src="uu11.png" onclick="openLightbox(this)" />
         </div>
+
+        <div id="vol5" class="volume-content">
+          <img src="uu13.png" onclick="openLightbox(this)" />
+          <img src="uu14.png" onclick="openLightbox(this)" />
+          <img src="uu15.png" onclick="openLightbox(this)" />
+          <img src="uu16.png" onclick="openLightbox(this)" />
+          <img src="uu17.png" onclick="openLightbox(this)" />
+          <img src="uu18.png" onclick="openLightbox(this)" />
+        </div>
+
+        <div id="vol6" class="volume-content">
+          <img src="uu19.png" onclick="openLightbox(this)" />
+          <img src="uu20.png" onclick="openLightbox(this)" />
+          <img src="uu21.png" onclick="openLightbox(this)" />
+          <img src="uu22.png" onclick="openLightbox(this)" />
+        </div>
+
+        <div id="vol7" class="volume-content">
+          <img src="uu23.png" onclick="openLightbox(this)" />
+          <img src="uu24.png" onclick="openLightbox(this)" />
+          <img src="uu25.png" onclick="openLightbox(this)" />
+          <img src="uu26.png" onclick="openLightbox(this)" />
+          <img src="uu27.png" onclick="openLightbox(this)" />
+          <img src="uu28.png" onclick="openLightbox(this)" />
+          <img src="uu29.png" onclick="openLightbox(this)" />
+        </div>
+
+        <div id="vol8" class="volume-content">
+          <img src="uu30.png" onclick="openLightbox(this)" />
+          <img src="uu31.png" onclick="openLightbox(this)" />
+          <img src="uu32.png" onclick="openLightbox(this)" />
+          <img src="uu33.png" onclick="openLightbox(this)" />
+        </div>
+
+        <div id="vol9" class="volume-content">
+          <img src="uu34.png" onclick="openLightbox(this)" />
+          <img src="uu35.png" onclick="openLightbox(this)" />
+          <img src="uu36.png" onclick="openLightbox(this)" />
+          <img src="uu37.png" onclick="openLightbox(this)" />
+          <img src="uu38.png" onclick="openLightbox(this)" />
+          <img src="uu39.png" onclick="openLightbox(this)" />
+          <img src="uu40.png" onclick="openLightbox(this)" />
+          <img src="uu41.png" onclick="openLightbox(this)" />
+        </div>
+
+        <div id="vol10" class="volume-content">
+          <img src="uu42.png" onclick="openLightbox(this)" />
+          <img src="uu43.png" onclick="openLightbox(this)" />
+          <img src="uu44.png" onclick="openLightbox(this)" />
+          <img src="uu45.png" onclick="openLightbox(this)" />
+          <img src="uu46.png" onclick="openLightbox(this)" />
+        </div>
+
+        <div id="vol11" class="volume-content">
+        </div>
+
+        <div id="video" class="volume-content">
+          <div class="video-gallery">
+            <video controls><source src="ov1.mp4" type="video/mp4" /></video>
+            <video controls><source src="ov2.mp4" type="video/mp4" /></video>
+            <video controls><source src="ov3.mp4" type="video/mp4" /></video>
+            <video controls><source src="ov4.mp4" type="video/mp4" /></video>
+            <video controls><source src="ov5.mp4" type="video/mp4" /></video>
+          </div>
+        </div>
       </div>
 
+      <!-- POEZIJA -->
       <div id="poezija" class="tab-content">
-        <div class="poezija-gallery">
+        <div class="volume-tabs">
+          <div class="volume-tab active" onclick="openVolume(event,'pvol1')">Vol.1</div>
+          <div class="volume-tab" onclick="openVolume(event,'pvol2')">Vol.2</div>
+        </div>
+
+        <div id="pvol1" class="volume-content active">
           <img src="up1.png" onclick="openLightbox(this)" />
           <img src="up2.png" onclick="openLightbox(this)" />
           <img src="up3.png" onclick="openLightbox(this)" />
@@ -306,8 +384,13 @@
           <img src="up18.png" onclick="openLightbox(this)" />
           <img src="up19.png" onclick="openLightbox(this)" />
         </div>
+
+        <div id="pvol2" class="volume-content">
+          <img src="up(2)1.png" onclick="openLightbox(this)" />
+        </div>
       </div>
 
+      <!-- MANIFESTO -->
       <div id="manifesto" class="tab-content">
         <div class="manifesto-gallery">
           <img src="om1.png" onclick="openLightbox(this)" />
@@ -330,7 +413,6 @@
         <div class="footer-text glitch" data-text="Črna Erotika Okuži Srne">
           Črna Erotika Okuži Srne
         </div>
-
         <a href="https://www.instagram.com/___o.s.e___/" target="_blank" rel="noopener noreferrer">
           Instagram — ___o.s.e___
         </a>
@@ -338,31 +420,32 @@
     </div>
 
     <script>
-      function openTab(event,id){
-        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+      function openTab(event, id) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         event.currentTarget.classList.add('active');
         document.getElementById(id).classList.add('active');
       }
 
-      function openVolume(event,id){
-        document.querySelectorAll('.volume-tab').forEach(t=>t.classList.remove('active'));
-        document.querySelectorAll('.volume-content').forEach(c=>c.classList.remove('active'));
+      function openVolume(event, id) {
+        const parent = event.currentTarget.closest('.tab-content');
+        parent.querySelectorAll('.volume-tab').forEach(t => t.classList.remove('active'));
+        parent.querySelectorAll('.volume-content').forEach(c => c.classList.remove('active'));
         event.currentTarget.classList.add('active');
         document.getElementById(id).classList.add('active');
       }
 
-      function openLightbox(img){
-        document.getElementById('lightbox').style.display='block';
-        document.getElementById('lightbox-img').src=img.src;
+      function openLightbox(img) {
+        document.getElementById('lightbox').style.display = 'block';
+        document.getElementById('lightbox-img').src = img.src;
       }
 
-      function closeLightbox(){
-        document.getElementById('lightbox').style.display='none';
+      function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
       }
 
-      document.addEventListener('keydown',function(e){
-        if(e.key==='Escape') closeLightbox();
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
       });
     </script>
   </body>
