@@ -4,449 +4,641 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="Y7DgTlLGnAwg9FY2TGghV3cpmDDctQdEd1FoDzaZPzU" />
-    <title>O.S.E. – Otroci Sintetične Eve | O.S.E.</title>
-
+    <title>O.S.E. – Otroci Sintetične Eve</title>
     <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
       html, body {
-        height: 100%;
-        margin: 0;
-        background: #000;
-        color: #fff;
+        background: #0a0a0a;
+        color: #e0e0e0;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        min-height: 100%;
+      }
+
+      /* NAV */
+      .nav {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        border-bottom: 1px solid #1a1a1a;
+        position: sticky;
+        top: 0;
+        background: #0a0a0a;
+        z-index: 100;
       }
 
-      .wrap {
-        width: 100%;
-        max-width: 1100px;
-      }
-
-      .title img {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-
-      .tabs {
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #333;
-        margin-bottom: 20px;
-      }
-
-      .tab {
-        padding: 12px 24px;
-        cursor: pointer;
-        color: #ccc;
-        transition: 0.3s;
-      }
-
-      .tab.active {
+      .nav-logo {
+        font-size: 11px;
+        letter-spacing: 5px;
         color: #fff;
-        border-bottom: 2px solid #fff;
+        font-weight: 500;
+        text-transform: uppercase;
       }
 
-      .tab:hover { color: #fff; }
+      .nav-links {
+        display: flex;
+        gap: 36px;
+      }
 
+      .nav-link {
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: #444;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: color .2s;
+        padding-bottom: 3px;
+        border-bottom: 1px solid transparent;
+      }
+
+      .nav-link:hover, .nav-link.active {
+        color: #fff;
+        border-bottom-color: #fff;
+      }
+
+      .nav-sub {
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: #1f1f1f;
+        text-transform: uppercase;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 60px 40px 48px;
+        border-bottom: 1px solid #111;
+      }
+
+      .hero-label {
+        font-size: 10px;
+        letter-spacing: 4px;
+        color: #2a2a2a;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      .hero-title {
+        font-size: 40px;
+        font-weight: 300;
+        letter-spacing: 8px;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 1.15;
+      }
+
+      .hero-title span { color: #ff2222; }
+
+      /* SECTIONS */
+      .section { padding: 40px; }
+
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 28px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #111;
+      }
+
+      .section-title {
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #333;
+      }
+
+      .section-count {
+        font-size: 9px;
+        letter-spacing: 2px;
+        color: #1f1f1f;
+        text-transform: uppercase;
+      }
+
+      /* TAB CONTENT */
       .tab-content { display: none; }
       .tab-content.active { display: block; }
 
-      .volume-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
+      /* TWO COL LAYOUT */
+      .two-col {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 40px;
       }
 
-      .volume-tab {
+      /* SIDE NAV */
+      .side-nav { display: flex; flex-direction: column; }
+
+      .side-item {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #2a2a2a;
         cursor: pointer;
-        color: #888;
-        padding: 8px 14px;
-        border-bottom: 1px solid transparent;
-        transition: 0.3s;
-      }
-
-      .volume-tab:hover { color: #fff; }
-
-      .volume-tab.active {
-        color: #fff;
-        border-bottom: 1px solid #fff;
-      }
-
-      .gallery img,
-      .volume-content img,
-      .poezija-gallery img,
-      .manifesto-gallery img {
-        width: 100%;
-        max-width: 900px;
-        height: auto;
-        display: block;
-        border-radius: 8px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-        cursor: pointer;
-        transition: transform 0.35s, box-shadow 0.35s;
-      }
-
-      .gallery img:hover,
-      .volume-content img:hover,
-      .poezija-gallery img:hover,
-      .manifesto-gallery img:hover {
-        transform: scale(1.03);
-        box-shadow: 0 10px 35px rgba(255,0,0,0.2);
-      }
-
-      .volume-content { display: none; }
-
-      .volume-content.active {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        align-items: center;
-      }
-
-      .poezija-gallery,
-      .manifesto-gallery {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        align-items: center;
-      }
-
-      .video-gallery {
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-        align-items: center;
         padding: 10px 0;
+        border-bottom: 1px solid #111;
+        transition: color .2s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
-      .video-gallery video {
+      .side-item::after {
+        content: '→';
+        opacity: 0;
+        transition: opacity .2s;
+        color: #ff2222;
+      }
+
+      .side-item:hover, .side-item.active {
+        color: #fff;
+      }
+
+      .side-item:hover::after, .side-item.active::after {
+        opacity: 1;
+      }
+
+      /* VOLUME CONTENT */
+      .vol-content { display: none; }
+      .vol-content.active { display: block; }
+
+      .vol-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+        color: #222;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+      }
+
+      .grid-item {
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        background: #0f0f0f;
+      }
+
+      .grid-item img {
         width: 100%;
-        max-width: 900px;
-        border-radius: 8px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-        background: #111;
+        height: 100%;
+        object-fit: cover;
         display: block;
+        transition: transform .4s, opacity .3s;
       }
 
+      .grid-item:hover img {
+        transform: scale(1.04);
+        opacity: .75;
+      }
+
+      .grid-overlay {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 12px;
+        background: linear-gradient(transparent, rgba(0,0,0,.85));
+        opacity: 0;
+        transition: opacity .3s;
+      }
+
+      .grid-item:hover .grid-overlay { opacity: 1; }
+
+      .grid-overlay-text {
+        font-size: 9px;
+        letter-spacing: 3px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+      /* TAGS (poezija vol tabs) */
+      .tags { margin-bottom: 20px; }
+
+      .tag {
+        display: inline-block;
+        font-size: 9px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #333;
+        border: 1px solid #1a1a1a;
+        padding: 5px 12px;
+        margin-right: 6px;
+        cursor: pointer;
+        transition: all .2s;
+      }
+
+      .tag:hover { border-color: #444; color: #fff; }
+      .tag.active { background: #fff; color: #000; border-color: #fff; }
+
+      /* VIDEO */
+      .video-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .video-list video {
+        width: 100%;
+        display: block;
+        background: #0f0f0f;
+      }
+
+      /* DIVIDER */
+      .divider { height: 1px; background: #111; margin: 0 40px; }
+
+      /* LIGHTBOX */
       .lightbox {
         display: none;
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
-        background: rgba(0,0,0,0.95);
+        background: rgba(0,0,0,.97);
         z-index: 1000;
+        align-items: center;
+        justify-content: center;
       }
+
+      .lightbox.open { display: flex; }
 
       .lightbox img {
-        max-width: 95%;
-        max-height: 95%;
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        margin: auto;
-        border-radius: 8px;
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+        display: block;
       }
 
-      .close {
-        position: absolute;
-        top: 20px; right: 30px;
-        font-size: 40px;
+      .lightbox-close {
+        position: fixed;
+        top: 24px;
+        right: 32px;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #444;
         cursor: pointer;
+        transition: color .2s;
       }
 
+      .lightbox-close:hover { color: #fff; }
+
+      /* FOOTER */
       .footer {
-        text-align: center;
-        padding: 40px 20px;
-        color: #666;
-        font-size: 14px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #111;
+        margin-top: 40px;
       }
 
-      .footer a {
-        color: #aaa;
-        text-decoration: none;
-        transition: 0.3s;
+      .footer-left {
+        font-size: 10px;
+        letter-spacing: 4px;
+        color: #ff2222;
+        text-transform: uppercase;
       }
 
-      .footer a:hover { color: #fff; }
-
-      .footer-text {
-        color: #ff0000;
-        font-size: 16px;
-        margin-bottom: 10px;
+      .footer-right {
+        font-size: 10px;
         letter-spacing: 2px;
+        text-transform: uppercase;
       }
 
-      .glitch {
-        position: relative;
-        display: inline-block;
+      .footer-right a {
+        color: #333;
+        text-decoration: none;
+        transition: color .2s;
       }
 
-      .glitch::before,
-      .glitch::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        overflow: hidden;
-      }
+      .footer-right a:hover { color: #fff; }
 
-      .glitch::before {
-        animation: glitch1 2s infinite;
-        color: #ff0000;
-      }
-
-      .glitch::after {
-        animation: glitch2 2s infinite;
-        color: #ff0000;
-      }
-
-      @keyframes glitch1 {
-        0%  { transform: translate(0); }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(-2px, -2px); }
-        60% { transform: translate(2px, 2px); }
-        80% { transform: translate(2px, -2px); }
-        100%{ transform: translate(0); }
-      }
-
-      @keyframes glitch2 {
-        0%  { transform: translate(0); }
-        20% { transform: translate(2px, -2px); }
-        40% { transform: translate(2px, 2px); }
-        60% { transform: translate(-2px, -2px); }
-        80% { transform: translate(-2px, 2px); }
-        100%{ transform: translate(0); }
+      @media (max-width: 700px) {
+        .nav { padding: 16px 20px; }
+        .nav-sub { display: none; }
+        .hero { padding: 40px 20px; }
+        .hero-title { font-size: 26px; }
+        .section { padding: 24px 20px; }
+        .two-col { grid-template-columns: 1fr; }
+        .side-nav { flex-direction: row; flex-wrap: wrap; gap: 0; margin-bottom: 20px; }
+        .side-item { padding: 8px 12px; border: 1px solid #111; margin: 2px; border-bottom: 1px solid #111; }
+        .side-item::after { display: none; }
+        .divider { margin: 0 20px; }
+        .footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
       }
     </style>
   </head>
-
   <body>
-    <div class="wrap">
-      <div class="title">
-        <img src="lol1.png" />
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-logo">O.S.E.</div>
+      <div class="nav-links">
+        <div class="nav-link active" onclick="openTab(event,'galerija')">Galerija</div>
+        <div class="nav-link" onclick="openTab(event,'poezija')">Poezija</div>
+        <div class="nav-link" onclick="openTab(event,'manifesto')">Manifesto</div>
       </div>
+      <div class="nav-sub">Otroci Sintetične Eve</div>
+    </nav>
 
-      <div class="tabs">
-        <div class="tab active" onclick="openTab(event,'galerija')">Galerija</div>
-        <div class="tab" onclick="openTab(event,'poezija')">Poezija</div>
-        <div class="tab" onclick="openTab(event,'manifesto')">Manifesto</div>
-      </div>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-label">Slovenija — Vizualna umetnost</div>
+      <div class="hero-title">O.S.E.<br><span>Kolekcija</span></div>
+    </div>
 
-      <!-- GALERIJA -->
-      <div id="galerija" class="tab-content active">
-        <div class="volume-tabs">
-          <div class="volume-tab active" onclick="openVolume(event,'novo')">Novo</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol1')">Vol.1</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol2')">Vol.2</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol3')">Vol.3</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol4')">Vol.4</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol5')">Vol.5</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol6')">Vol.6</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol7')">Vol.7</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol8')">Vol.8</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol9')">Vol.9</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol10')">Vol.10</div>
-          <div class="volume-tab" onclick="openVolume(event,'vol11')">Vol.11</div>
-          <div class="volume-tab" onclick="openVolume(event,'video')">Video</div>
+    <!-- GALERIJA -->
+    <div id="galerija" class="tab-content active">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Galerija</div>
+          <div class="section-count">Vol. 1–11 + Video</div>
         </div>
+        <div class="two-col">
 
-        <div id="novo" class="volume-content active">
-          <img src="uu12.png" onclick="openLightbox(this)" />
-          <img src="ll7.png" onclick="openLightbox(this)" />
-          <img src="cc6.png" onclick="openLightbox(this)" />
-        </div>
+          <!-- SIDE NAV -->
+          <div class="side-nav">
+            <div class="side-item active" onclick="openVol(event,'novo')">Novo</div>
+            <div class="side-item" onclick="openVol(event,'vol1')">Vol. 1</div>
+            <div class="side-item" onclick="openVol(event,'vol2')">Vol. 2</div>
+            <div class="side-item" onclick="openVol(event,'vol3')">Vol. 3</div>
+            <div class="side-item" onclick="openVol(event,'vol4')">Vol. 4</div>
+            <div class="side-item" onclick="openVol(event,'vol5')">Vol. 5</div>
+            <div class="side-item" onclick="openVol(event,'vol6')">Vol. 6</div>
+            <div class="side-item" onclick="openVol(event,'vol7')">Vol. 7</div>
+            <div class="side-item" onclick="openVol(event,'vol8')">Vol. 8</div>
+            <div class="side-item" onclick="openVol(event,'vol9')">Vol. 9</div>
+            <div class="side-item" onclick="openVol(event,'vol10')">Vol. 10</div>
+            <div class="side-item" onclick="openVol(event,'vol11')">Vol. 11</div>
+            <div class="side-item" onclick="openVol(event,'video')">Video</div>
+          </div>
 
-        <div id="vol1" class="volume-content">
-          <img src="cc1.png" onclick="openLightbox(this)" />
-          <img src="cc2.png" onclick="openLightbox(this)" />
-          <img src="cc3.png" onclick="openLightbox(this)" />
-          <img src="cc4.png" onclick="openLightbox(this)" />
-          <img src="cc5.png" onclick="openLightbox(this)" />
-          <img src="ll1.png" onclick="openLightbox(this)" />
-        </div>
+          <!-- VOLUMES -->
+          <div>
 
-        <div id="vol2" class="volume-content">
-          <img src="ll2.png" onclick="openLightbox(this)" />
-          <img src="ll3.png" onclick="openLightbox(this)" />
-          <img src="ll4.png" onclick="openLightbox(this)" />
-          <img src="uu1.png" onclick="openLightbox(this)" />
-          <img src="uu2.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="novo" class="vol-content active">
+              <div class="vol-label">Novo — 3 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu12.png')"><img src="uu12.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll7.png')"><img src="ll7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc6.png')"><img src="cc6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol3" class="volume-content">
-          <img src="uu4.png" onclick="openLightbox(this)" />
-          <img src="uu5.png" onclick="openLightbox(this)" />
-          <img src="uu6.png" onclick="openLightbox(this)" />
-          <img src="uu7.png" onclick="openLightbox(this)" />
-          <img src="ll5.png" onclick="openLightbox(this)" />
-          <img src="ll6.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol1" class="vol-content">
+              <div class="vol-label">Vol. 1 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('cc1.png')"><img src="cc1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc2.png')"><img src="cc2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc3.png')"><img src="cc3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc4.png')"><img src="cc4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc5.png')"><img src="cc5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll1.png')"><img src="ll1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol4" class="volume-content">
-          <img src="uu8.png" onclick="openLightbox(this)" />
-          <img src="uu9.png" onclick="openLightbox(this)" />
-          <img src="uu10.png" onclick="openLightbox(this)" />
-          <img src="uu11.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol2" class="vol-content">
+              <div class="vol-label">Vol. 2 — 5 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('ll2.png')"><img src="ll2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll3.png')"><img src="ll3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll4.png')"><img src="ll4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu1.png')"><img src="uu1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu2.png')"><img src="uu2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol5" class="volume-content">
-          <img src="uu13.png" onclick="openLightbox(this)" />
-          <img src="uu14.png" onclick="openLightbox(this)" />
-          <img src="uu15.png" onclick="openLightbox(this)" />
-          <img src="uu16.png" onclick="openLightbox(this)" />
-          <img src="uu17.png" onclick="openLightbox(this)" />
-          <img src="uu18.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol3" class="vol-content">
+              <div class="vol-label">Vol. 3 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu4.png')"><img src="uu4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu5.png')"><img src="uu5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu6.png')"><img src="uu6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu7.png')"><img src="uu7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll5.png')"><img src="ll5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll6.png')"><img src="ll6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol6" class="volume-content">
-          <img src="uu19.png" onclick="openLightbox(this)" />
-          <img src="uu20.png" onclick="openLightbox(this)" />
-          <img src="uu21.png" onclick="openLightbox(this)" />
-          <img src="uu22.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol4" class="vol-content">
+              <div class="vol-label">Vol. 4 — 4 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu8.png')"><img src="uu8.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu9.png')"><img src="uu9.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu10.png')"><img src="uu10.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu11.png')"><img src="uu11.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol7" class="volume-content">
-          <img src="uu23.png" onclick="openLightbox(this)" />
-          <img src="uu24.png" onclick="openLightbox(this)" />
-          <img src="uu25.png" onclick="openLightbox(this)" />
-          <img src="uu26.png" onclick="openLightbox(this)" />
-          <img src="uu27.png" onclick="openLightbox(this)" />
-          <img src="uu28.png" onclick="openLightbox(this)" />
-          <img src="uu29.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol5" class="vol-content">
+              <div class="vol-label">Vol. 5 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu13.png')"><img src="uu13.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu14.png')"><img src="uu14.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu15.png')"><img src="uu15.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu16.png')"><img src="uu16.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu17.png')"><img src="uu17.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu18.png')"><img src="uu18.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol8" class="volume-content">
-          <img src="uu30.png" onclick="openLightbox(this)" />
-          <img src="uu31.png" onclick="openLightbox(this)" />
-          <img src="uu32.png" onclick="openLightbox(this)" />
-          <img src="uu33.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol6" class="vol-content">
+              <div class="vol-label">Vol. 6 — 4 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu19.png')"><img src="uu19.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu20.png')"><img src="uu20.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu21.png')"><img src="uu21.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu22.png')"><img src="uu22.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol9" class="volume-content">
-          <img src="uu34.png" onclick="openLightbox(this)" />
-          <img src="uu35.png" onclick="openLightbox(this)" />
-          <img src="uu36.png" onclick="openLightbox(this)" />
-          <img src="uu37.png" onclick="openLightbox(this)" />
-          <img src="uu38.png" onclick="openLightbox(this)" />
-          <img src="uu39.png" onclick="openLightbox(this)" />
-          <img src="uu40.png" onclick="openLightbox(this)" />
-          <img src="uu41.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol7" class="vol-content">
+              <div class="vol-label">Vol. 7 — 7 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu23.png')"><img src="uu23.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu24.png')"><img src="uu24.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu25.png')"><img src="uu25.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu26.png')"><img src="uu26.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu27.png')"><img src="uu27.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu28.png')"><img src="uu28.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu29.png')"><img src="uu29.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol10" class="volume-content">
-          <img src="uu42.png" onclick="openLightbox(this)" />
-          <img src="uu43.png" onclick="openLightbox(this)" />
-          <img src="uu44.png" onclick="openLightbox(this)" />
-          <img src="uu45.png" onclick="openLightbox(this)" />
-          <img src="uu46.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol8" class="vol-content">
+              <div class="vol-label">Vol. 8 — 4 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu30.png')"><img src="uu30.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu31.png')"><img src="uu31.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu32.png')"><img src="uu32.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu33.png')"><img src="uu33.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="vol11" class="volume-content">
-          <img src="uu47.png" onclick="openLightbox(this)" />
-        </div>
+            <div id="vol9" class="vol-content">
+              <div class="vol-label">Vol. 9 — 8 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu34.png')"><img src="uu34.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu35.png')"><img src="uu35.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu36.png')"><img src="uu36.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu37.png')"><img src="uu37.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu38.png')"><img src="uu38.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu39.png')"><img src="uu39.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu40.png')"><img src="uu40.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu41.png')"><img src="uu41.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
 
-        <div id="video" class="volume-content">
-          <div class="video-gallery">
-            <video controls><source src="ov1.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov2.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov3.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov4.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov5.mp4" type="video/mp4" /></video>
+            <div id="vol10" class="vol-content">
+              <div class="vol-label">Vol. 10 — 5 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu42.png')"><img src="uu42.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu43.png')"><img src="uu43.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu44.png')"><img src="uu44.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu45.png')"><img src="uu45.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu46.png')"><img src="uu46.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol11" class="vol-content">
+              <div class="vol-label">Vol. 11 — 1 delo</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu47.png')"><img src="uu47.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="video" class="vol-content">
+              <div class="vol-label">Video — 5 posnetkov</div>
+              <div class="video-list">
+                <video controls><source src="ov1.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov2.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov3.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov4.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov5.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- POEZIJA -->
-      <div id="poezija" class="tab-content">
-        <div class="volume-tabs">
-          <div class="volume-tab active" onclick="openVolume(event,'pvol1')">Vol.1</div>
-          <div class="volume-tab" onclick="openVolume(event,'pvol2')">Vol.2</div>
+    <!-- POEZIJA -->
+    <div id="poezija" class="tab-content">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Poezija</div>
+          <div class="section-count">Vol. 1–2</div>
+        </div>
+        <div class="tags">
+          <span class="tag active" onclick="openPVol(event,'pvol1')">Vol. 1</span>
+          <span class="tag" onclick="openPVol(event,'pvol2')">Vol. 2</span>
         </div>
 
-        <div id="pvol1" class="volume-content active">
-          <img src="up1.png" onclick="openLightbox(this)" />
-          <img src="up2.png" onclick="openLightbox(this)" />
-          <img src="up3.png" onclick="openLightbox(this)" />
-          <img src="up4.png" onclick="openLightbox(this)" />
-          <img src="up5.png" onclick="openLightbox(this)" />
-          <img src="up6.png" onclick="openLightbox(this)" />
-          <img src="up7.png" onclick="openLightbox(this)" />
-          <img src="up8.png" onclick="openLightbox(this)" />
-          <img src="up9.png" onclick="openLightbox(this)" />
-          <img src="up10.png" onclick="openLightbox(this)" />
-          <img src="up11.png" onclick="openLightbox(this)" />
-          <img src="up12.png" onclick="openLightbox(this)" />
-          <img src="up13.png" onclick="openLightbox(this)" />
-          <img src="up14.png" onclick="openLightbox(this)" />
-          <img src="up15.png" onclick="openLightbox(this)" />
-          <img src="up16.png" onclick="openLightbox(this)" />
-          <img src="up17.png" onclick="openLightbox(this)" />
-          <img src="up18.png" onclick="openLightbox(this)" />
-          <img src="up19.png" onclick="openLightbox(this)" />
+        <div id="pvol1" class="vol-content active">
+          <div class="grid">
+            <div class="grid-item" onclick="openLightbox('up1.png')"><img src="up1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up2.png')"><img src="up2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up3.png')"><img src="up3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up4.png')"><img src="up4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up5.png')"><img src="up5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up6.png')"><img src="up6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up7.png')"><img src="up7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up8.png')"><img src="up8.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up9.png')"><img src="up9.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up10.png')"><img src="up10.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up11.png')"><img src="up11.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up12.png')"><img src="up12.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up13.png')"><img src="up13.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up14.png')"><img src="up14.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up15.png')"><img src="up15.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up16.png')"><img src="up16.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up17.png')"><img src="up17.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up18.png')"><img src="up18.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up19.png')"><img src="up19.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          </div>
         </div>
 
-        <div id="pvol2" class="volume-content">
-          <img src="up(2)1.png" onclick="openLightbox(this)" />
-          <img src="up20.png" onclick="openLightbox(this)" />
-        </div>
-      </div>
-
-      <!-- MANIFESTO -->
-      <div id="manifesto" class="tab-content">
-        <div class="manifesto-gallery">
-          <img src="om1.png" onclick="openLightbox(this)" />
-          <img src="om2.png" onclick="openLightbox(this)" />
-          <img src="om3.png" onclick="openLightbox(this)" />
-          <img src="om4.png" onclick="openLightbox(this)" />
-          <img src="om5.png" onclick="openLightbox(this)" />
-          <img src="om6.png" onclick="openLightbox(this)" />
-          <img src="om7.png" onclick="openLightbox(this)" />
-          <img src="om8.png" onclick="openLightbox(this)" />
+        <div id="pvol2" class="vol-content">
+          <div class="grid">
+            <div class="grid-item" onclick="openLightbox('up(2)1.png')"><img src="up(2)1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up20.png')"><img src="up20.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close">×</span>
-        <img id="lightbox-img" onclick="event.stopPropagation()" />
-      </div>
-
-      <div class="footer">
-        <div class="footer-text glitch" data-text="Črna Erotika Okuži Srne">
-          Črna Erotika Okuži Srne
+    <!-- MANIFESTO -->
+    <div id="manifesto" class="tab-content">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Manifesto</div>
+          <div class="section-count">8 del</div>
         </div>
-        <a href="https://www.instagram.com/___o.s.e___/" target="_blank" rel="noopener noreferrer">
-          Instagram — ___o.s.e___
-        </a>
+        <div class="grid">
+          <div class="grid-item" onclick="openLightbox('om1.png')"><img src="om1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om2.png')"><img src="om2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om3.png')"><img src="om3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om4.png')"><img src="om4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om5.png')"><img src="om5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om6.png')"><img src="om6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om7.png')"><img src="om7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om8.png')"><img src="om8.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-close">× Zapri</div>
+      <img id="lightbox-img" onclick="event.stopPropagation()" />
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-left">Črna Erotika Okuži Srne</div>
+      <div class="footer-right">
+        <a href="https://www.instagram.com/___o.s.e___/" target="_blank" rel="noopener noreferrer">Instagram — ___o.s.e___</a>
       </div>
     </div>
 
     <script>
-      function openTab(event, id) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      function openTab(e, id) {
+        document.querySelectorAll('.nav-link').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        event.currentTarget.classList.add('active');
+        e.currentTarget.classList.add('active');
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0, 0);
+      }
+
+      function openVol(e, id) {
+        document.querySelectorAll('.side-item').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.vol-content').forEach(c => c.classList.remove('active'));
+        e.currentTarget.classList.add('active');
         document.getElementById(id).classList.add('active');
       }
 
-      function openVolume(event, id) {
-        const parent = event.currentTarget.closest('.tab-content');
-        parent.querySelectorAll('.volume-tab').forEach(t => t.classList.remove('active'));
-        parent.querySelectorAll('.volume-content').forEach(c => c.classList.remove('active'));
-        event.currentTarget.classList.add('active');
+      function openPVol(e, id) {
+        document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('#poezija .vol-content').forEach(c => c.classList.remove('active'));
+        e.currentTarget.classList.add('active');
         document.getElementById(id).classList.add('active');
       }
 
-      function openLightbox(img) {
-        document.getElementById('lightbox').style.display = 'block';
-        document.getElementById('lightbox-img').src = img.src;
+      function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.add('open');
       }
 
       function closeLightbox() {
-        document.getElementById('lightbox').style.display = 'none';
+        document.getElementById('lightbox').classList.remove('open');
       }
 
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeLightbox();
       });
     </script>
