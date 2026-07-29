@@ -15,7 +15,6 @@
         min-height: 100%;
       }
 
-      /* NAV */
       .nav {
         display: flex;
         align-items: center;
@@ -36,10 +35,7 @@
         text-transform: uppercase;
       }
 
-      .nav-links {
-        display: flex;
-        gap: 36px;
-      }
+      .nav-links { display: flex; gap: 36px; }
 
       .nav-link {
         font-size: 10px;
@@ -52,44 +48,18 @@
         border-bottom: 1px solid transparent;
       }
 
-      .nav-link:hover, .nav-link.active {
-        color: #fff;
-        border-bottom-color: #fff;
-      }
+      .nav-link:hover, .nav-link.active { color: #fff; border-bottom-color: #fff; }
 
-      .nav-sub {
-        font-size: 10px;
-        letter-spacing: 2px;
-        color: #1f1f1f;
-        text-transform: uppercase;
-      }
+      .nav-sub { font-size: 10px; letter-spacing: 2px; color: #1f1f1f; text-transform: uppercase; }
 
-      /* HERO */
-      .hero {
-        padding: 60px 40px 48px;
-        border-bottom: 1px solid #111;
-      }
+      .hero { padding: 60px 40px 48px; border-bottom: 1px solid #111; }
 
-      .hero-label {
-        font-size: 10px;
-        letter-spacing: 4px;
-        color: #2a2a2a;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-      }
+      .hero-label { font-size: 10px; letter-spacing: 4px; color: #2a2a2a; text-transform: uppercase; margin-bottom: 14px; }
 
-      .hero-title {
-        font-size: 40px;
-        font-weight: 300;
-        letter-spacing: 8px;
-        color: #fff;
-        text-transform: uppercase;
-        line-height: 1.15;
-      }
+      .hero-title { font-size: 40px; font-weight: 300; letter-spacing: 8px; color: #fff; text-transform: uppercase; line-height: 1.15; }
 
       .hero-title span { color: #ff2222; }
 
-      /* SECTIONS */
       .section { padding: 40px; }
 
       .section-header {
@@ -101,32 +71,15 @@
         border-bottom: 1px solid #111;
       }
 
-      .section-title {
-        font-size: 10px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        color: #333;
-      }
+      .section-title { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #333; }
 
-      .section-count {
-        font-size: 9px;
-        letter-spacing: 2px;
-        color: #1f1f1f;
-        text-transform: uppercase;
-      }
+      .section-count { font-size: 9px; letter-spacing: 2px; color: #1f1f1f; text-transform: uppercase; }
 
-      /* TAB CONTENT */
       .tab-content { display: none; }
       .tab-content.active { display: block; }
 
-      /* TWO COL LAYOUT */
-      .two-col {
-        display: grid;
-        grid-template-columns: 160px 1fr;
-        gap: 40px;
-      }
+      .two-col { display: grid; grid-template-columns: 160px 1fr; gap: 40px; }
 
-      /* SIDE NAV */
       .side-nav { display: flex; flex-direction: column; }
 
       .side-item {
@@ -143,60 +96,31 @@
         justify-content: space-between;
       }
 
-      .side-item::after {
-        content: '→';
-        opacity: 0;
-        transition: opacity .2s;
-        color: #ff2222;
-      }
+      .side-item::after { content: '→'; opacity: 0; transition: opacity .2s; color: #ff2222; }
 
-      .side-item:hover, .side-item.active {
-        color: #fff;
-      }
+      .side-item:hover, .side-item.active { color: #fff; }
 
-      .side-item:hover::after, .side-item.active::after {
-        opacity: 1;
-      }
+      .side-item:hover::after, .side-item.active::after { opacity: 1; }
 
-      /* VOLUME CONTENT */
       .vol-content { display: none; }
       .vol-content.active { display: block; }
 
-      .vol-label {
-        font-size: 9px;
-        letter-spacing: 3px;
-        color: #222;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
+      .vol-label { font-size: 9px; letter-spacing: 3px; color: #222; text-transform: uppercase; margin-bottom: 16px; }
 
-      /* GRID */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2px;
-      }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 
-      .grid-item {
-        aspect-ratio: 3/4;
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
-        background: #0f0f0f;
-      }
+      .grid-item { aspect-ratio: 3/4; overflow: hidden; cursor: pointer; position: relative; background: #0f0f0f; }
 
       .grid-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         display: block;
         transition: transform .4s, opacity .3s;
       }
 
-      .grid-item:hover img {
-        transform: scale(1.04);
-        opacity: .75;
-      }
+      .grid-item:hover img { transform: scale(1.04); opacity: .75; }
 
       .grid-overlay {
         position: absolute;
@@ -209,14 +133,8 @@
 
       .grid-item:hover .grid-overlay { opacity: 1; }
 
-      .grid-overlay-text {
-        font-size: 9px;
-        letter-spacing: 3px;
-        color: #fff;
-        text-transform: uppercase;
-      }
+      .grid-overlay-text { font-size: 9px; letter-spacing: 3px; color: #fff; text-transform: uppercase; }
 
-      /* TAGS (poezija vol tabs) */
       .tags { margin-bottom: 20px; }
 
       .tag {
@@ -235,23 +153,12 @@
       .tag:hover { border-color: #444; color: #fff; }
       .tag.active { background: #fff; color: #000; border-color: #fff; }
 
-      /* VIDEO */
-      .video-list {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
+      .video-list { display: flex; flex-direction: column; gap: 2px; }
 
-      .video-list video {
-        width: 100%;
-        display: block;
-        background: #0f0f0f;
-      }
+      .video-list video { width: 100%; display: block; background: #0f0f0f; }
 
-      /* DIVIDER */
       .divider { height: 1px; background: #111; margin: 0 40px; }
 
-      /* LIGHTBOX */
       .lightbox {
         display: none;
         position: fixed;
@@ -265,12 +172,7 @@
 
       .lightbox.open { display: flex; }
 
-      .lightbox img {
-        max-width: 90vw;
-        max-height: 90vh;
-        object-fit: contain;
-        display: block;
-      }
+      .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
 
       .lightbox-close {
         position: fixed;
@@ -286,7 +188,6 @@
 
       .lightbox-close:hover { color: #fff; }
 
-      /* FOOTER */
       .footer {
         padding: 40px;
         display: flex;
@@ -296,24 +197,11 @@
         margin-top: 40px;
       }
 
-      .footer-left {
-        font-size: 10px;
-        letter-spacing: 4px;
-        color: #ff2222;
-        text-transform: uppercase;
-      }
+      .footer-left { font-size: 10px; letter-spacing: 4px; color: #ff2222; text-transform: uppercase; }
 
-      .footer-right {
-        font-size: 10px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
+      .footer-right { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
 
-      .footer-right a {
-        color: #333;
-        text-decoration: none;
-        transition: color .2s;
-      }
+      .footer-right a { color: #333; text-decoration: none; transition: color .2s; }
 
       .footer-right a:hover { color: #fff; }
 
@@ -334,7 +222,6 @@
   </head>
   <body>
 
-    <!-- NAV -->
     <nav class="nav">
       <div class="nav-logo">O.S.E.</div>
       <div class="nav-links">
@@ -345,13 +232,11 @@
       <div class="nav-sub">Otroci Sintetične Eve</div>
     </nav>
 
-    <!-- HERO -->
     <div class="hero">
       <div class="hero-label">Slovenija — Vizualna umetnost</div>
       <div class="hero-title">O.S.E.<br><span>Kolekcija</span></div>
     </div>
 
-    <!-- GALERIJA -->
     <div id="galerija" class="tab-content active">
       <div class="section">
         <div class="section-header">
@@ -360,7 +245,6 @@
         </div>
         <div class="two-col">
 
-          <!-- SIDE NAV -->
           <div class="side-nav">
             <div class="side-item active" onclick="openVol(event,'novo')">Novo</div>
             <div class="side-item" onclick="openVol(event,'vol1')">Vol. 1</div>
@@ -377,7 +261,6 @@
             <div class="side-item" onclick="openVol(event,'video')">Video</div>
           </div>
 
-          <!-- VOLUMES -->
           <div>
 
             <div id="novo" class="vol-content active">
@@ -505,13 +388,13 @@
             </div>
 
             <div id="vol11" class="vol-content">
-              <div class="vol-label">Vol. 11 — 1 delo</div>
+              <div class="vol-label">Vol. 11 — 5 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu47.png')"><img src="uu47.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div
-                <div class="grid-item" onclick="openLightbox('uu48.png')"><img src="uu43.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu49.png')"><img src="uu44.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu50.png')"><img src="uu45.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu51.png')"><img src="uu46.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu47.png')"><img src="uu47.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu48.png')"><img src="uu48.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu49.png')"><img src="uu49.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu50.png')"><img src="uu50.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu51.png')"><img src="uu51.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
@@ -531,7 +414,6 @@
       </div>
     </div>
 
-    <!-- POEZIJA -->
     <div id="poezija" class="tab-content">
       <div class="section">
         <div class="section-header">
@@ -576,7 +458,6 @@
       </div>
     </div>
 
-    <!-- MANIFESTO -->
     <div id="manifesto" class="tab-content">
       <div class="section">
         <div class="section-header">
@@ -596,13 +477,11 @@
       </div>
     </div>
 
-    <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
       <div class="lightbox-close">× Zapri</div>
       <img id="lightbox-img" onclick="event.stopPropagation()" />
     </div>
 
-    <!-- FOOTER -->
     <div class="footer">
       <div class="footer-left">Črna Erotika Okuži Srne</div>
       <div class="footer-right">
@@ -634,7 +513,9 @@
       }
 
       function openLightbox(src) {
-        document.getElementById('lightbox-img').src = src;
+        const img = document.getElementById('lightbox-img');
+        img.onerror = () => { img.alt = 'Slika ni na voljo'; };
+        img.src = src;
         document.getElementById('lightbox').classList.add('open');
       }
 
