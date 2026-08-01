@@ -222,6 +222,7 @@
         <div class="nav-link active" onclick="openTab(event,'galerija')">Galerija</div>
         <div class="nav-link" onclick="openTab(event,'poezija')">Poezija</div>
         <div class="nav-link" onclick="openTab(event,'manifesto')">Manifesto</div>
+        <div class="nav-link" onclick="openTab(event,'pesniski-manifesto')">Pesniški manifesto</div>
       </div>
       <div class="nav-sub">Otroci Sintetične Eve</div>
     </nav>
@@ -235,7 +236,7 @@
       <div class="section">
         <div class="section-header">
           <div class="section-title">Galerija</div>
-          <div class="section-count">Vol. 1–11 + Video</div>
+          <div class="section-count">Vol. 1–12 + Video</div>
         </div>
         <div class="two-col">
 
@@ -252,6 +253,7 @@
             <div class="side-item" onclick="openVol(event,'vol9')">Vol. 9</div>
             <div class="side-item" onclick="openVol(event,'vol10')">Vol. 10</div>
             <div class="side-item" onclick="openVol(event,'vol11')">Vol. 11</div>
+            <div class="side-item" onclick="openVol(event,'vol12')">Vol. 12</div>
             <div class="side-item" onclick="openVol(event,'video')">Video</div>
           </div>
 
@@ -260,129 +262,135 @@
             <div id="novo" class="vol-content active">
               <div class="vol-label">Novo — 3 dela</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu12.png')"><img src="uu12.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('ll7.png')"><img src="ll7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('cc6.png')"><img src="cc6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu12.png')"><img src="uu12.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll7.png')"><img src="ll7.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc6.png')"><img src="cc6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol1" class="vol-content">
               <div class="vol-label">Vol. 1 — 6 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('cc1.png')"><img src="cc1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('cc2.png')"><img src="cc2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('cc3.png')"><img src="cc3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('cc4.png')"><img src="cc4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('cc5.png')"><img src="cc5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('ll1.png')"><img src="ll1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc1.png')"><img src="cc1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc2.png')"><img src="cc2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc3.png')"><img src="cc3.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc4.png')"><img src="cc4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc5.png')"><img src="cc5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll1.png')"><img src="ll1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol2" class="vol-content">
               <div class="vol-label">Vol. 2 — 5 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('ll2.png')"><img src="ll2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('ll3.png')"><img src="ll3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('ll4.png')"><img src="ll4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu1.png')"><img src="uu1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu2.png')"><img src="uu2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll2.png')"><img src="ll2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll3.png')"><img src="ll3.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll4.png')"><img src="ll4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu1.png')"><img src="uu1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu2.png')"><img src="uu2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol3" class="vol-content">
               <div class="vol-label">Vol. 3 — 6 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu4.png')"><img src="uu4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu5.png')"><img src="uu5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu6.png')"><img src="uu6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu7.png')"><img src="uu7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('ll5.png')"><img src="ll5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('ll6.png')"><img src="ll6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu4.png')"><img src="uu4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu5.png')"><img src="uu5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu6.png')"><img src="uu6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu7.png')"><img src="uu7.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll5.png')"><img src="ll5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll6.png')"><img src="ll6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol4" class="vol-content">
               <div class="vol-label">Vol. 4 — 4 dela</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu8.png')"><img src="uu8.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu9.png')"><img src="uu9.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu10.png')"><img src="uu10.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu11.png')"><img src="uu11.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu8.png')"><img src="uu8.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu9.png')"><img src="uu9.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu10.png')"><img src="uu10.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu11.png')"><img src="uu11.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol5" class="vol-content">
               <div class="vol-label">Vol. 5 — 6 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu13.png')"><img src="uu13.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu14.png')"><img src="uu14.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu15.png')"><img src="uu15.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu16.png')"><img src="uu16.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu17.png')"><img src="uu17.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu18.png')"><img src="uu18.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu13.png')"><img src="uu13.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu14.png')"><img src="uu14.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu15.png')"><img src="uu15.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu16.png')"><img src="uu16.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu17.png')"><img src="uu17.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu18.png')"><img src="uu18.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol6" class="vol-content">
               <div class="vol-label">Vol. 6 — 4 dela</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu19.png')"><img src="uu19.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu20.png')"><img src="uu20.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu21.png')"><img src="uu21.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu22.png')"><img src="uu22.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu19.png')"><img src="uu19.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu20.png')"><img src="uu20.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu21.png')"><img src="uu21.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu22.png')"><img src="uu22.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol7" class="vol-content">
               <div class="vol-label">Vol. 7 — 6 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu23.png')"><img src="uu23.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu24.png')"><img src="uu24.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu25.png')"><img src="uu25.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu26.png')"><img src="uu26.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu27.png')"><img src="uu27.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu28.png')"><img src="uu28.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu23.png')"><img src="uu23.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu24.png')"><img src="uu24.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu25.png')"><img src="uu25.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu26.png')"><img src="uu26.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu27.png')"><img src="uu27.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu28.png')"><img src="uu28.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol8" class="vol-content">
               <div class="vol-label">Vol. 8 — 5 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu29.png')"><img src="uu29.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu30.png')"><img src="uu30.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu31.png')"><img src="uu31.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu32.png')"><img src="uu32.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu33.png')"><img src="uu33.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu29.png')"><img src="uu29.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu30.png')"><img src="uu30.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu31.png')"><img src="uu31.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu32.png')"><img src="uu32.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu33.png')"><img src="uu33.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol9" class="vol-content">
               <div class="vol-label">Vol. 9 — 3 dela</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu34.png')"><img src="uu34.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu35.png')"><img src="uu35.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu36.png')"><img src="uu36.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu34.png')"><img src="uu34.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu35.png')"><img src="uu35.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu36.png')"><img src="uu36.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol10" class="vol-content">
               <div class="vol-label">Vol. 10 — 5 del</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu42.png')"><img src="uu42.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu43.png')"><img src="uu43.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu44.png')"><img src="uu44.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu45.png')"><img src="uu45.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu46.png')"><img src="uu46.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu42.png')"><img src="uu42.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu43.png')"><img src="uu43.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu44.png')"><img src="uu44.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu45.png')"><img src="uu45.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu46.png')"><img src="uu46.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
             <div id="vol11" class="vol-content">
-              <div class="vol-label">Vol. 11 — 4 dela</div>
+              <div class="vol-label">Vol. 11 — 3 dela</div>
               <div class="grid">
-                <div class="grid-item" onclick="openLightbox('uu47.png')"><img src="uu47.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu48.png')"><img src="uu48.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu49.png')"><img src="uu49.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-                <div class="grid-item" onclick="openLightbox('uu50.png')"><img src="uu50.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu47.png')"><img src="uu47.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu48.png')"><img src="uu48.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu49.png')"><img src="uu49.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol12" class="vol-content">
+              <div class="vol-label">Vol. 12 — 1 delo</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu50.png')"><img src="uu50.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
               </div>
             </div>
 
@@ -414,25 +422,25 @@
 
         <div id="pvol1" class="vol-content active">
           <div class="grid">
-            <div class="grid-item" onclick="openLightbox('up1.png')"><img src="up1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up2.png')"><img src="up2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up3.png')"><img src="up3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up4.png')"><img src="up4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up5.png')"><img src="up5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up6.png')"><img src="up6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up7.png')"><img src="up7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up8.png')"><img src="up8.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up9.png')"><img src="up9.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up10.png')"><img src="up10.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up11.png')"><img src="up11.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up12.png')"><img src="up12.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up13.png')"><img src="up13.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up14.png')"><img src="up14.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up15.png')"><img src="up15.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up16.png')"><img src="up16.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up17.png')"><img src="up17.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up18.png')"><img src="up18.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-            <div class="grid-item" onclick="openLightbox('up19.png')"><img src="up19.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up1.png')"><img src="up1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up2.png')"><img src="up2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up3.png')"><img src="up3.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up4.png')"><img src="up4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up5.png')"><img src="up5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up6.png')"><img src="up6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up7.png')"><img src="up7.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up8.png')"><img src="up8.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up9.png')"><img src="up9.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up10.png')"><img src="up10.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up11.png')"><img src="up11.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up12.png')"><img src="up12.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up13.png')"><img src="up13.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up14.png')"><img src="up14.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up15.png')"><img src="up15.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up16.png')"><img src="up16.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up17.png')"><img src="up17.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up18.png')"><img src="up18.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+            <div class="grid-item" onclick="openLightbox('up19.png')"><img src="up19.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
           </div>
         </div>
       </div>
@@ -445,14 +453,27 @@
           <div class="section-count">8 del</div>
         </div>
         <div class="grid">
-          <div class="grid-item" onclick="openLightbox('om1.png')"><img src="om1.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om2.png')"><img src="om2.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om3.png')"><img src="om3.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om4.png')"><img src="om4.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om5.png')"><img src="om5.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om6.png')"><img src="om6.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om7.png')"><img src="om7.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
-          <div class="grid-item" onclick="openLightbox('om8.png')"><img src="om8.png" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om1.png')"><img src="om1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om2.png')"><img src="om2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om3.png')"><img src="om3.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om4.png')"><img src="om4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om5.png')"><img src="om5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om6.png')"><img src="om6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om7.png')"><img src="om7.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('om8.png')"><img src="om8.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pesniski-manifesto" class="tab-content">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Pesniški manifesto</div>
+          <div class="section-count">2 dela</div>
+        </div>
+        <div class="grid">
+          <div class="grid-item" onclick="openLightbox('pm1.png')"><img src="pm1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+          <div class="grid-item" onclick="openLightbox('pm2.png')"><img src="pm2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
         </div>
       </div>
     </div>
