@@ -7,12 +7,14 @@
     <title>O.S.E. – Otroci Sintetične Eve</title>
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
       html, body {
         background: #0a0a0a;
         color: #e0e0e0;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
         min-height: 100%;
       }
+
       .nav {
         display: flex;
         align-items: center;
@@ -24,8 +26,11 @@
         background: #0a0a0a;
         z-index: 100;
       }
+
       .nav-logo { font-size: 11px; letter-spacing: 5px; color: #fff; font-weight: 500; text-transform: uppercase; }
+
       .nav-links { display: flex; gap: 36px; }
+
       .nav-link {
         font-size: 10px;
         letter-spacing: 3px;
@@ -36,13 +41,21 @@
         padding-bottom: 3px;
         border-bottom: 1px solid transparent;
       }
+
       .nav-link:hover, .nav-link.active { color: #fff; border-bottom-color: #fff; }
+
       .nav-sub { font-size: 10px; letter-spacing: 2px; color: #1f1f1f; text-transform: uppercase; }
+
       .hero { padding: 60px 40px 48px; border-bottom: 1px solid #111; }
+
       .hero-label { font-size: 10px; letter-spacing: 4px; color: #2a2a2a; text-transform: uppercase; margin-bottom: 14px; }
+
       .hero-title { font-size: 40px; font-weight: 300; letter-spacing: 8px; color: #fff; text-transform: uppercase; line-height: 1.15; }
+
       .hero-title span { color: #ff2222; }
+
       .section { padding: 40px; }
+
       .section-header {
         display: flex;
         align-items: baseline;
@@ -51,12 +64,18 @@
         padding-bottom: 12px;
         border-bottom: 1px solid #111;
       }
+
       .section-title { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #333; }
+
       .section-count { font-size: 9px; letter-spacing: 2px; color: #1f1f1f; text-transform: uppercase; }
+
       .tab-content { display: none; }
       .tab-content.active { display: block; }
+
       .two-col { display: grid; grid-template-columns: 160px 1fr; gap: 40px; }
+
       .side-nav { display: flex; flex-direction: column; }
+
       .side-item {
         font-size: 10px;
         letter-spacing: 3px;
@@ -70,14 +89,22 @@
         align-items: center;
         justify-content: space-between;
       }
+
       .side-item::after { content: '→'; opacity: 0; transition: opacity .2s; color: #ff2222; }
+
       .side-item:hover, .side-item.active { color: #fff; }
+
       .side-item:hover::after, .side-item.active::after { opacity: 1; }
+
       .vol-content { display: none; }
       .vol-content.active { display: block; }
+
       .vol-label { font-size: 9px; letter-spacing: 3px; color: #222; text-transform: uppercase; margin-bottom: 16px; }
+
       .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+
       .grid-item { aspect-ratio: 3/4; overflow: hidden; cursor: pointer; position: relative; background: #0f0f0f; }
+
       .grid-item img {
         width: 100%;
         height: 100%;
@@ -86,7 +113,9 @@
         display: block;
         transition: transform .4s, opacity .3s;
       }
+
       .grid-item:hover img { transform: scale(1.04); opacity: .75; }
+
       .grid-overlay {
         position: absolute;
         bottom: 0; left: 0; right: 0;
@@ -95,9 +124,13 @@
         opacity: 0;
         transition: opacity .3s;
       }
+
       .grid-item:hover .grid-overlay { opacity: 1; }
+
       .grid-overlay-text { font-size: 9px; letter-spacing: 3px; color: #fff; text-transform: uppercase; }
+
       .tags { margin-bottom: 20px; }
+
       .tag {
         display: inline-block;
         font-size: 9px;
@@ -110,11 +143,16 @@
         cursor: pointer;
         transition: all .2s;
       }
+
       .tag:hover { border-color: #444; color: #fff; }
       .tag.active { background: #fff; color: #000; border-color: #fff; }
+
       .video-list { display: flex; flex-direction: column; gap: 2px; }
+
       .video-list video { width: 100%; display: block; background: #0f0f0f; }
+
       .divider { height: 1px; background: #111; margin: 0 40px; }
+
       .lightbox {
         display: none;
         position: fixed;
@@ -125,8 +163,11 @@
         align-items: center;
         justify-content: center;
       }
+
       .lightbox.open { display: flex; }
+
       .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
+
       .lightbox-close {
         position: fixed;
         top: 24px;
@@ -138,7 +179,9 @@
         cursor: pointer;
         transition: color .2s;
       }
+
       .lightbox-close:hover { color: #fff; }
+
       .footer {
         padding: 40px;
         display: flex;
@@ -147,10 +190,15 @@
         border-top: 1px solid #111;
         margin-top: 40px;
       }
+
       .footer-left { font-size: 10px; letter-spacing: 4px; color: #ff2222; text-transform: uppercase; }
+
       .footer-right { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+
       .footer-right a { color: #333; text-decoration: none; transition: color .2s; }
+
       .footer-right a:hover { color: #fff; }
+
       @media (max-width: 700px) {
         .nav { padding: 16px 20px; }
         .nav-sub { display: none; }
@@ -167,6 +215,7 @@
     </style>
   </head>
   <body>
+
     <nav class="nav">
       <div class="nav-logo">O.S.E.</div>
       <div class="nav-links">
@@ -177,26 +226,193 @@
       </div>
       <div class="nav-sub">Otroci Sintetične Eve</div>
     </nav>
+
     <div class="hero">
       <div class="hero-label">Slovenija — Vizualna umetnost</div>
       <div class="hero-title">O.S.E.<br><span>Kolekcija</span></div>
     </div>
+
     <div id="galerija" class="tab-content active">
       <div class="section">
         <div class="section-header">
           <div class="section-title">Galerija</div>
-          <div class="section-count" id="galerija-count">Vol. 1–13 + Video</div>
+          <div class="section-count">Vol. 1–12 + Video</div>
         </div>
         <div class="two-col">
-          <div class="side-nav" id="side-nav">
-            <!-- generated by renderGallery() -->
+
+          <div class="side-nav">
+            <div class="side-item active" onclick="openVol(event,'novo')">Novo</div>
+            <div class="side-item" onclick="openVol(event,'vol1')">Vol. 1</div>
+            <div class="side-item" onclick="openVol(event,'vol2')">Vol. 2</div>
+            <div class="side-item" onclick="openVol(event,'vol3')">Vol. 3</div>
+            <div class="side-item" onclick="openVol(event,'vol4')">Vol. 4</div>
+            <div class="side-item" onclick="openVol(event,'vol5')">Vol. 5</div>
+            <div class="side-item" onclick="openVol(event,'vol6')">Vol. 6</div>
+            <div class="side-item" onclick="openVol(event,'vol7')">Vol. 7</div>
+            <div class="side-item" onclick="openVol(event,'vol8')">Vol. 8</div>
+            <div class="side-item" onclick="openVol(event,'vol9')">Vol. 9</div>
+            <div class="side-item" onclick="openVol(event,'vol10')">Vol. 10</div>
+            <div class="side-item" onclick="openVol(event,'vol11')">Vol. 11</div>
+            <div class="side-item" onclick="openVol(event,'vol12')">Vol. 12</div>
+            <div class="side-item" onclick="openVol(event,'video')">Video</div>
           </div>
-          <div id="vol-wrap">
-            <!-- generated by renderGallery() -->
+
+          <div>
+
+            <div id="novo" class="vol-content active">
+              <div class="vol-label">Novo — 3 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu12.png')"><img src="uu12.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll7.png')"><img src="ll7.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc6.png')"><img src="cc6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol1" class="vol-content">
+              <div class="vol-label">Vol. 1 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('cc1.png')"><img src="cc1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc2.png')"><img src="cc2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc3.png')"><img src="cc3.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc4.png')"><img src="cc4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('cc5.png')"><img src="cc5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll1.png')"><img src="ll1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol2" class="vol-content">
+              <div class="vol-label">Vol. 2 — 5 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('ll2.png')"><img src="ll2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll3.png')"><img src="ll3.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll4.png')"><img src="ll4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu1.png')"><img src="uu1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu2.png')"><img src="uu2.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol3" class="vol-content">
+              <div class="vol-label">Vol. 3 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu4.png')"><img src="uu4.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu5.png')"><img src="uu5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu6.png')"><img src="uu6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu7.png')"><img src="uu7.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll5.png')"><img src="ll5.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('ll6.png')"><img src="ll6.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol4" class="vol-content">
+              <div class="vol-label">Vol. 4 — 4 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu8.png')"><img src="uu8.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu9.png')"><img src="uu9.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu10.png')"><img src="uu10.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu11.png')"><img src="uu11.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol5" class="vol-content">
+              <div class="vol-label">Vol. 5 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu13.png')"><img src="uu13.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu14.png')"><img src="uu14.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu15.png')"><img src="uu15.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu16.png')"><img src="uu16.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu17.png')"><img src="uu17.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu18.png')"><img src="uu18.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol6" class="vol-content">
+              <div class="vol-label">Vol. 6 — 4 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu19.png')"><img src="uu19.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu20.png')"><img src="uu20.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu21.png')"><img src="uu21.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu22.png')"><img src="uu22.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol7" class="vol-content">
+              <div class="vol-label">Vol. 7 — 6 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu23.png')"><img src="uu23.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu24.png')"><img src="uu24.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu25.png')"><img src="uu25.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu26.png')"><img src="uu26.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu27.png')"><img src="uu27.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu28.png')"><img src="uu28.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol8" class="vol-content">
+              <div class="vol-label">Vol. 8 — 5 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu29.png')"><img src="uu29.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu30.png')"><img src="uu30.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu31.png')"><img src="uu31.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu32.png')"><img src="uu32.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu33.png')"><img src="uu33.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol9" class="vol-content">
+              <div class="vol-label">Vol. 9 — 3 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu34.png')"><img src="uu34.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu35.png')"><img src="uu35.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu36.png')"><img src="uu36.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol10" class="vol-content">
+              <div class="vol-label">Vol. 10 — 5 del</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu42.png')"><img src="uu42.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu43.png')"><img src="uu43.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu44.png')"><img src="uu44.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu45.png')"><img src="uu45.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu46.png')"><img src="uu46.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol11" class="vol-content">
+              <div class="vol-label">Vol. 11 — 4 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu47.png')"><img src="uu47.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu48.png')"><img src="uu48.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu49.png')"><img src="uu49.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu50.png')"><img src="uu50.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="vol12" class="vol-content">
+              <div class="vol-label">Vol. 12 — 3 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu52.png')"><img src="uu52.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu53.png')"><img src="uu53.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu54.png')"><img src="uu54.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
+            <div id="video" class="vol-content">
+              <div class="vol-label">Video — 5 posnetkov</div>
+              <div class="video-list">
+                <video controls><source src="ov1.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov2.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov3.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov4.mp4" type="video/mp4" /></video>
+                <video controls><source src="ov5.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
+
     <div id="poezija" class="tab-content">
       <div class="section">
         <div class="section-header">
@@ -206,6 +422,7 @@
         <div class="tags">
           <span class="tag active" onclick="openPVol(event,'pvol1')">Vol. 1</span>
         </div>
+
         <div id="pvol1" class="vol-content active">
           <div class="grid">
             <div class="grid-item" onclick="openLightbox('up1.png')"><img src="up1.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
@@ -231,6 +448,7 @@
         </div>
       </div>
     </div>
+
     <div id="manifesto" class="tab-content">
       <div class="section">
         <div class="section-header">
@@ -249,6 +467,7 @@
         </div>
       </div>
     </div>
+
     <div id="pesniski-manifesto" class="tab-content">
       <div class="section">
         <div class="section-header">
@@ -261,80 +480,20 @@
         </div>
       </div>
     </div>
+
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
       <div class="lightbox-close">× Zapri</div>
       <img id="lightbox-img" onclick="event.stopPropagation()" />
     </div>
+
     <div class="footer">
       <div class="footer-left">Črna Erotika Okuži Srne</div>
       <div class="footer-right">
         <a href="https://www.instagram.com/___o.s.e___/" target="_blank" rel="noopener noreferrer">Instagram — ___o.s.e___</a>
       </div>
     </div>
-    <script>
-      /* =========================================================
-         VOLUMES — oldest FIRST (index 0 = Vol. 1).
-         To add a brand-new drop: paste a new array at the END of
-         this list. It automatically becomes the next number
-         (e.g. Vol.14), and the "Novo" tab automatically points
-         to it — nothing else in this file needs to change.
-      ========================================================= */
-      const volumes = [
-        ['cc1.png', 'cc2.png', 'cc3.png', 'cc4.png', 'cc5.png', 'll1.png'],
-        ['ll2.png', 'll3.png', 'll4.png', 'uu1.png', 'uu2.png'],
-        ['uu4.png', 'uu5.png', 'uu6.png', 'uu7.png', 'll5.png', 'll6.png'],
-        ['uu8.png', 'uu9.png', 'uu10.png', 'uu11.png'],
-        ['uu13.png', 'uu14.png', 'uu15.png', 'uu16.png', 'uu17.png', 'uu18.png'],
-        ['uu19.png', 'uu20.png', 'uu21.png', 'uu22.png'],
-        ['uu23.png', 'uu24.png', 'uu25.png', 'uu26.png', 'uu27.png', 'uu28.png'],
-        ['uu29.png', 'uu30.png', 'uu31.png', 'uu32.png', 'uu33.png'],
-        ['uu34.png', 'uu35.png', 'uu36.png'],
-        ['uu42.png', 'uu43.png', 'uu44.png', 'uu45.png', 'uu46.png'],
-        ['uu47.png', 'uu48.png', 'uu49.png', 'uu50.png', 'uu51.jpg'],
-        ['uu52.png', 'uu53.png', 'uu54.png'],
-        ['uu12.png', 'll7.png', 'cc6.png'],
-      ];
-      function delWord(n) {
-        if (n === 1) return 'delo';
-        if (n >= 2 && n <= 4) return 'dela';
-        return 'del';
-      }
-      function renderGallery() {
-        const sideNav = document.getElementById('side-nav');
-        const volWrap = document.getElementById('vol-wrap');
-        const newestVolNum = volumes.length; // "Novo" always points to this number
-        let sideHtml = '';
-        let volHtml = '';
-        // "Novo" tab: just links to whichever Vol. is currently newest — no duplicate images
-        sideHtml += `<div class="side-item active" onclick="openVol(event,'vol${newestVolNum}')">Novo</div>`;
-        volumes.forEach((imgs, i) => {
-          const n = i + 1;
-          sideHtml += `<div class="side-item" onclick="openVol(event,'vol${n}')">Vol. ${n}</div>`;
-          const gridHtml = imgs.map(src =>
-            `<div class="grid-item" onclick="openLightbox('${src}')"><img src="${src}" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>`
-          ).join('');
-          const isNewest = n === newestVolNum;
-          volHtml += `<div id="vol${n}" class="vol-content${isNewest ? ' active' : ''}">
-            <div class="vol-label">Vol. ${n} — ${imgs.length} ${delWord(imgs.length)}</div>
-            <div class="grid">${gridHtml}</div>
-          </div>`;
-        });
-        sideHtml += `<div class="side-item" onclick="openVol(event,'video')">Video</div>`;
-        volHtml += `<div id="video" class="vol-content">
-          <div class="vol-label">Video — 5 posnetkov</div>
-          <div class="video-list">
-            <video controls><source src="ov1.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov2.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov3.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov4.mp4" type="video/mp4" /></video>
-            <video controls><source src="ov5.mp4" type="video/mp4" /></video>
-          </div>
-        </div>`;
 
-        sideNav.innerHTML = sideHtml;
-        volWrap.innerHTML = volHtml;
-        document.getElementById('galerija-count').textContent = `Vol. 1–${volumes.length} + Video`;
-      }
+    <script>
       function openTab(e, id) {
         document.querySelectorAll('.nav-link').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
@@ -342,31 +501,35 @@
         document.getElementById(id).classList.add('active');
         window.scrollTo(0, 0);
       }
+
       function openVol(e, id) {
         document.querySelectorAll('.side-item').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.vol-content').forEach(c => c.classList.remove('active'));
         e.currentTarget.classList.add('active');
         document.getElementById(id).classList.add('active');
       }
+
       function openPVol(e, id) {
         document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('#poezija .vol-content').forEach(c => c.classList.remove('active'));
         e.currentTarget.classList.add('active');
         document.getElementById(id).classList.add('active');
       }
+
       function openLightbox(src) {
         const img = document.getElementById('lightbox-img');
         img.onerror = () => { img.alt = 'Slika ni na voljo'; };
         img.src = src;
         document.getElementById('lightbox').classList.add('open');
       }
+
       function closeLightbox() {
         document.getElementById('lightbox').classList.remove('open');
       }
+
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeLightbox();
       });
-      renderGallery();
     </script>
   </body>
 </html>
