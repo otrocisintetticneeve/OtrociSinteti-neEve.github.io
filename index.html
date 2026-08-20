@@ -334,15 +334,13 @@
 
     <script>
       /* =========================================================
-         VOLUMES — newest FIRST (index 0 = Vol. 1).
-         To add a brand-new drop: paste a new array as the FIRST
-         entry below. Every existing volume automatically shifts
-         its number up by one (old Vol.1 -> Vol.2, etc), and the
-         oldest volume always keeps the highest number. Nothing
-         else in this file needs to change.
+         VOLUMES — oldest FIRST (index 0 = Vol. 1).
+         To add a brand-new drop: paste a new array at the END of
+         this list. It automatically becomes the next number
+         (e.g. Vol.14), and the "Novo" tab automatically points
+         to it — nothing else in this file needs to change.
       ========================================================= */
       const volumes = [
-        ['uu12.png', 'll7.png', 'cc6.png'],
         ['cc1.png', 'cc2.png', 'cc3.png', 'cc4.png', 'cc5.png', 'll1.png'],
         ['ll2.png', 'll3.png', 'll4.png', 'uu1.png', 'uu2.png'],
         ['uu4.png', 'uu5.png', 'uu6.png', 'uu7.png', 'll5.png', 'll6.png'],
@@ -355,6 +353,7 @@
         ['uu42.png', 'uu43.png', 'uu44.png', 'uu45.png', 'uu46.png'],
         ['uu47.png', 'uu48.png', 'uu49.png', 'uu50.png'],
         ['uu52.png', 'uu53.png', 'uu54.png'],
+        ['uu12.png', 'll7.png', 'cc6.png'], // newest -> becomes highest Vol. number
       ];
 
       function delWord(n) {
@@ -366,19 +365,24 @@
       function renderGallery() {
         const sideNav = document.getElementById('side-nav');
         const volWrap = document.getElementById('vol-wrap');
+        const newestVolNum = volumes.length; // "Novo" always points to this number
+
         let sideHtml = '';
         let volHtml = '';
 
+        // "Novo" tab: just links to whichever Vol. is currently newest — no duplicate images
+        sideHtml += `<div class="side-item active" onclick="openVol(event,'vol${newestVolNum}')">Novo</div>`;
+
         volumes.forEach((imgs, i) => {
           const n = i + 1;
-          const isFirst = i === 0;
-          sideHtml += `<div class="side-item${isFirst ? ' active' : ''}" onclick="openVol(event,'vol${n}')">Vol. ${n}</div>`;
+          sideHtml += `<div class="side-item" onclick="openVol(event,'vol${n}')">Vol. ${n}</div>`;
 
           const gridHtml = imgs.map(src =>
             `<div class="grid-item" onclick="openLightbox('${src}')"><img src="${src}" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>`
           ).join('');
 
-          volHtml += `<div id="vol${n}" class="vol-content${isFirst ? ' active' : ''}">
+          const isNewest = n === newestVolNum;
+          volHtml += `<div id="vol${n}" class="vol-content${isNewest ? ' active' : ''}">
             <div class="vol-label">Vol. ${n} — ${imgs.length} ${delWord(imgs.length)}</div>
             <div class="grid">${gridHtml}</div>
           </div>`;
