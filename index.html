@@ -241,7 +241,8 @@
         <div class="two-col">
 
           <div class="side-nav">
-            <div class="side-item active" onclick="openVol(event,'vol1')">Vol. 1</div>
+            <div class="side-item active" onclick="openVol(event,'novo')">Novo</div>
+            <div class="side-item" onclick="openVol(event,'vol1')">Vol. 1</div>
             <div class="side-item" onclick="openVol(event,'vol2')">Vol. 2</div>
             <div class="side-item" onclick="openVol(event,'vol3')">Vol. 3</div>
             <div class="side-item" onclick="openVol(event,'vol4')">Vol. 4</div>
@@ -259,7 +260,12 @@
 
           <div>
 
-            <div id="vol1" class="vol-content active">
+            <!-- "Novo" is filled in automatically by JS (see setupNovo() at bottom).
+                 It always mirrors whichever vol## div below has the highest number.
+                 Do not put images here by hand. -->
+            <div id="novo" class="vol-content active"></div>
+
+            <div id="vol1" class="vol-content">
               <div class="vol-label">Vol. 1 — 3 dela</div>
               <div class="grid">
                 <div class="grid-item" onclick="openLightbox('uu12.png')"><img src="uu12.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
@@ -530,6 +536,47 @@
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeLightbox();
       });
+
+      // ===========================================================
+      // AUTOMATIC "NOVO" SYSTEM
+      // Scans every div whose id matches vol1, vol2, vol3 ... (any
+      // number of digits), finds the one with the HIGHEST number,
+      // and clones its grid (images + label) into #novo.
+      // No images are duplicated in the HTML — #novo starts empty
+      // and this function fills it in at load time by referencing
+      // the same <img> markup that already exists in the highest
+      // vol div. Add a new vol14, vol15, etc. later and this will
+      // automatically pick it up — nothing else to edit.
+      // ===========================================================
+      function setupNovo() {
+        const volDivs = Array.from(document.querySelectorAll('[id]'))
+          .filter(el => /^vol\d+$/.test(el.id));
+
+        if (volDivs.length === 0) return;
+
+        let highestEl = volDivs[0];
+        let highestNum = parseInt(highestEl.id.replace('vol', ''), 10);
+
+        volDivs.forEach(el => {
+          const num = parseInt(el.id.replace('vol', ''), 10);
+          if (num > highestNum) {
+            highestNum = num;
+            highestEl = el;
+          }
+        });
+
+        const novoContent = document.getElementById('novo');
+        const sourceGrid = highestEl.querySelector('.grid');
+        const sourceLabel = highestEl.querySelector('.vol-label');
+        if (!novoContent || !sourceGrid) return;
+
+        const countText = sourceLabel ? sourceLabel.textContent.split('—')[1].trim() : '';
+        novoContent.innerHTML =
+          `<div class="vol-label">Novo — ${countText}</div>` +
+          `<div class="grid">${sourceGrid.innerHTML}</div>`;
+      }
+
+      setupNovo();
     </script>
   </body>
 </html>
