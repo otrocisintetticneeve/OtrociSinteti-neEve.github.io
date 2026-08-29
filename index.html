@@ -236,7 +236,7 @@
       <div class="section">
         <div class="section-header">
           <div class="section-title">Galerija</div>
-          <div class="section-count">Vol. 1–13 + Video</div>
+          <div class="section-count">Vol. 1–14 + Video</div>
         </div>
         <div class="two-col">
 
@@ -255,6 +255,7 @@
             <div class="side-item" onclick="openVol(event,'vol11')">Vol. 11</div>
             <div class="side-item" onclick="openVol(event,'vol12')">Vol. 12</div>
             <div class="side-item" onclick="openVol(event,'vol13')">Vol. 13</div>
+            <div class="side-item" onclick="openVol(event,'vol14')">Vol. 14</div>
             <div class="side-item" onclick="openVol(event,'video')">Video</div>
           </div>
 
@@ -404,6 +405,14 @@
               </div>
             </div>
 
+            <div id="vol14" class="vol-content">
+              <div class="vol-label">Vol. 14 — 2 dela</div>
+              <div class="grid">
+                <div class="grid-item" onclick="openLightbox('uu56.png')"><img src="uu56.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+                <div class="grid-item" onclick="openLightbox('uu57.png')"><img src="uu57.png" loading="lazy" decoding="async" /><div class="grid-overlay"><div class="grid-overlay-text">Odpri</div></div></div>
+              </div>
+            </div>
+
             <div id="video" class="vol-content">
               <div class="vol-label">Video — 5 posnetkov</div>
               <div class="video-list">
@@ -546,7 +555,7 @@
       // No images are duplicated in the HTML — #novo starts empty
       // and this function fills it in at load time by referencing
       // the same <img> markup that already exists in the highest
-      // vol div. Add a new vol14, vol15, etc. later and this will
+      // vol div. Add a new vol15, vol16, etc. later and this will
       // automatically pick it up — nothing else to edit.
       // ===========================================================
       function setupNovo() {
